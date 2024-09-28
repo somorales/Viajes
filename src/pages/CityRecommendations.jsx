@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Error() {
+export default function CityRecommendations() {
   return (
     <div>
       
