@@ -15,7 +15,7 @@ import Footer from './components/Footer'
 
 
 function App() {
-
+  console.log("URL backend", import.meta.env.VITE_SERVER_URL)
 
   return(
 
