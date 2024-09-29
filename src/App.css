@@ -162,3 +162,8 @@ button.boton-mas-ancho {
    
     width: 50px;
 }
+
+
+.stamp-seleccionado {
+    border: 1px solid black;
+}
