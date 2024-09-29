@@ -1,9 +1,16 @@
 import React from 'react'
+import { useParams } from 'react-router'
 
-export default function CityCard() {
+function CityCard(props) {
+
+  const {eachCity, index} = props
+
   return (
-    <div>
-      
+    <div className='city-card' key={index}  style={{backgroundImage:`url (${eachCity.image})`}}>
+      <img src={eachCity.image} alt={eachCity.city} />
+      <h2>{eachCity.city}</h2>
     </div>
   )
 }
+
+export default CityCard
