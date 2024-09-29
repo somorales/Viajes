@@ -25,12 +25,12 @@ function App() {
   <Routes>
 
   <Route path="/" element={<HomePage />} />
-  <Route path="/:city" element={<CityRecommendations />} />
-  <Route path="/:recommendationId" element={<RecommendationDetails />} />
-  <Route path="/create" element={<CreateRecommendation />} />
+  <Route path="/cities/:city" element={<CityRecommendations />} />
+  <Route path="/cities/:city/recommendations/:recommendationId" element={<RecommendationDetails />} />
+  <Route path="/cities/:city/create" element={<CreateRecommendation />} />
   <Route path="/about" element={<About />} />
   <Route path="*" element={<Error />} />
-  <Route path="/edit" element={<EditRecommendation />} />
+  <Route path="/cities/:city/recommendations/:recommendationId/edit" element={<EditRecommendation />} />
   <Route path="preview" element={<CardPreview />} />
 
   </Routes>
