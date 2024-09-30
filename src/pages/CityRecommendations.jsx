@@ -45,7 +45,7 @@ console.log("recomendaciones de esta ciudad", cityRecommendations)
         <p>{currentCity.tip}</p>
       </div>
 
-      { cityRecommendations === undefined ? (
+      { cityRecommendations.length === 0 ? (
         <h2>Oops, sorry, we still dont have nothing to recommend you at this city 🙃</h2>
       ) : (
       
