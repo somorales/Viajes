@@ -14,7 +14,7 @@ function HomePage(props) {
 
   return (
     <>
-    <h1>Choose a city</h1>
+     <h1 className='main-title'>Choose a city</h1>
     <div id='cities-box'>
       {cities.map((eachCity)=>{
 
