@@ -1,5 +1,6 @@
 import React from 'react'
 import planeIcon from '../images/plane-icon.png'
+import { Link } from 'react-router-dom'
 
 function Error() {
   return (

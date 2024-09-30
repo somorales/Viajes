@@ -43,9 +43,9 @@ function App() {
   <Route path="/:city/:cityId/recommendations/:recommendationId" element={<RecommendationDetails />} />
   <Route path="/create" element={<CreateRecommendation cities={cities} />} />
   <Route path="/about" element={<About />} />
-  <Route path="*" element={<Error />} />
   <Route path="/:city/:cityId/recommendations/:recommendationId/edit" element={<EditRecommendation />} />
   <Route path="preview" element={<CardPreview />} />
+  <Route path="*" element={<Error />} />
 
   </Routes>
   

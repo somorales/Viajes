@@ -53,7 +53,7 @@ console.log("recomendaciones de esta ciudad", cityRecommendations)
       
       cityRecommendations.map((recommendation)=>{
         return(
-          <Link to={`/${currentCity.city}/recommendations/${recommendation.id}`}><div key={recommendation.id}  className='recommendation-card'>
+          <Link to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}><div key={recommendation.id}  className='recommendation-card'>
             <img src={recommendation.image} alt={recommendation.title} />
             <h2>{recommendation.title}</h2>
             <p>{recommendation.description}</p>
