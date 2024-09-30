@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -6,7 +6,6 @@ import axios from "axios";
 import { useEffect } from "react";
 
 export default function EditRecommendation() {
-
   const params = useParams();
   const navigate = useNavigate();
 
@@ -21,7 +20,6 @@ export default function EditRecommendation() {
   const [activeStep, setActiveStep] = useState(0);
   const [stamp, setStamp] = useState("");
 
-
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_SERVER_URL}/cities/${params.cityId}`)
@@ -35,17 +33,20 @@ export default function EditRecommendation() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/recommendations/${params.recommendationId}`)
+      .get(
+        `${import.meta.env.VITE_SERVER_URL}/recommendations/${
+          params.recommendationId
+        }`
+      )
       .then((response) => {
         setTitle(response.data.title);
         setDescription(response.data.description);
-        setDate(response.data.setDate);
+        setDate(response.data.date);
         setCompanion(response.data.companion);
         setUsuario(response.data.usuario);
         setCategory(response.data.category);
         setImage(response.data.image);
         setStamp(response.data.stamp);
-
       })
       .catch((error) => {
         console.log(error);
@@ -105,6 +106,19 @@ export default function EditRecommendation() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (
+      title === "" ||
+      description === "" ||
+      date === "" ||
+      companion === "" ||
+      usuario == "" ||
+      category === "" ||
+      image === ""
+    ) {
+      alert("complete all fields")
+      return
+    }
+
     const recommendacionEdit = {
       cityId: params.cityId,
       title: title,
@@ -118,28 +132,18 @@ export default function EditRecommendation() {
 
     try {
       await axios.put(
-        `${import.meta.env.VITE_SERVER_URL}/recommendations/${params.recommendationId}`,
+        `${import.meta.env.VITE_SERVER_URL}/recommendations/${
+          params.recommendationId
+        }`,
         recommendacionEdit
       );
 
       //usamos params para sacar el identificador de la ciudad de la url
-      navigate(`/cities/${params.city}`);
-
+      navigate(`/${params.city}`);
     } catch (error) {
       console.log(error);
     }
   };
-
-
-    
-   
-
-    
-  
-
-
-
-
 
   return (
     <div>
@@ -183,7 +187,7 @@ export default function EditRecommendation() {
                       required
                     >
                       <option value="family">Family</option>
-                      <option value="traveler">Solo Traveler</option>
+                      <option value="solo traveler">Solo Traveler</option>
                       <option value="pets">Pets</option>
                       <option value="patner">Patner</option>
                       <option value="friends">Friends</option>
@@ -213,7 +217,6 @@ export default function EditRecommendation() {
                     onChange={handelCategoryChange}
                     required
                   >
-                  
                     <option value="experience">Experience</option>
                     <option value="hidden places ">Hidden Places</option>
                     <option value="food & drinks">Food & Drinks</option>
@@ -299,7 +302,7 @@ export default function EditRecommendation() {
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
-                  <Link to={`/cities/${params.city}`}>
+                  <Link to={`"/${params.city}/${params.cityId}/recommendations/${params.recommendationId}`}>
                     <button className="boton-secundario">Cancel</button>
                   </Link>
                 </div>
@@ -316,8 +319,4 @@ export default function EditRecommendation() {
       </div>
     </div>
   );
-  }
-
-
-      
-
+}

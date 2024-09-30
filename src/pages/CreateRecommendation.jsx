@@ -89,6 +89,18 @@ export default function CreateRecommendation(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      title === "" ||
+      description === "" ||
+      date === "" ||
+      companion === "" ||
+      usuario == "" ||
+      category === "" ||
+      image === ""
+    ) {
+      alert("completar todos los campos")
+      return
+    }
 
     const newRecommendation = {
       cityId: city,
