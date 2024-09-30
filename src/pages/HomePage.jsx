@@ -5,20 +5,9 @@ import CityCard from '../components/CityCard'
 import { Link } from 'react-router-dom'
 
 
-function HomePage() {
-  const [cities, setCities] = useState([])
-
-  useEffect(()=> {
-    axios.get(`${import.meta.env.VITE_SERVER_URL}/cities`)
-    .then((response)=>{
-      setCities(response.data)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-
-  }, [])
-   
+function HomePage(props) {
+    
+  const {cities}=props
 
   console.log(cities)
 
@@ -27,10 +16,10 @@ function HomePage() {
     <>
     <h1>Choose a city</h1>
     <div id='cities-box'>
-      {cities.map((eachCity, index)=>{
+      {cities.map((eachCity)=>{
 
         return (
-          <Link to={`/cities/${eachCity}`}> <CityCard  eachCity={eachCity} key={index}/></Link>
+          <Link to={`/${eachCity.city}`}> <CityCard key={eachCity.id} eachCity={eachCity}/></Link>
         )
       })}
     </div>
