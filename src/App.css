@@ -134,6 +134,9 @@ button.boton-mas-ancho {
 }
 
 
+.stamp-seleccionado {
+    border: 1px solid black;
+}
 
 /*HOMEPAGE*/
 
@@ -146,12 +149,26 @@ button.boton-mas-ancho {
     gap: 10px;
     
 }
+
+#cities-box a {
+    color: black;
+}
+
+ .main-title {
+    color: black;
+    text-align: center;
+    padding: 15px;
+}
+
+
 .city-card {
-    background-color: pink;
+    background-color: white;
     border-radius: 15px;
-    width: 300px;
-    height: 300px;
+    border: 1px solid rgb(17, 24, 39);
+    width: 200px;
+    height: 200px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
@@ -160,10 +177,94 @@ button.boton-mas-ancho {
 
 .city-card img {
    
-    width: 50px;
+    width: 100px;
 }
 
 
-.stamp-seleccionado {
-    border: 1px solid black;
+/* NAVBAR*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F2BC57;
+  }
+  
+ #burger-menu {
+    padding: 5px;
+    margin: 10px;
+ }
+
+/* CITY RECOMMENDATIONS */
+
+/* #cityRecommendation-screen {
+
+} */
+
+#city-info {
+background-color: white;
+   border: 1px solid rgb(17, 24, 39);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 15px 50px;
+}
+
+#city-info img {
+    width: 800px;
+}
+
+#city-info h1, p {
+    margin: auto;
+}
+
+.recommendation-card {
+    background-color: white;
+   border: 1px solid rgb(17, 24, 39);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 50px;
+    padding: 20px;
+}
+
+
+.recommendation-card img {
+    border-radius: 15px;
+    width: 800px;
+}
+
+
+
+/* FOOTER */
+
+#footer {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+}
+
+/* ABOUT */
+
+
+#about {
+    margin: 30px auto;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+.developer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
 }

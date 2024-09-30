@@ -41,7 +41,9 @@ console.log("recomendaciones de esta ciudad", cityRecommendations)
       <div id='cityRecommendation-screen'>
 
       <div id='city-info'>
+        <img src={currentCity.image} alt={currentCity.city} />
         <h1>{currentCity.city}</h1>
+        <p>{currentCity.fact}</p>
         <p>{currentCity.tip}</p>
       </div>
 
@@ -51,7 +53,8 @@ console.log("recomendaciones de esta ciudad", cityRecommendations)
       
       cityRecommendations.map((recommendation)=>{
         return(
-          <Link to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}><div className='recommendation-card'>
+          <Link to={`/${currentCity.city}/recommendations/${recommendation.id}`}><div key={recommendation.id}  className='recommendation-card'>
+            <img src={recommendation.image} alt={recommendation.title} />
             <h2>{recommendation.title}</h2>
             <p>{recommendation.description}</p>
             <p>{recommendation.date}</p>
