@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useEffect } from "react";
 
-export default function CreateRecommendation() {
+
+export default function CreateRecommendation(props) {
   const params = useParams();
   const navigate = useNavigate();
 
@@ -19,19 +19,8 @@ export default function CreateRecommendation() {
   const [stamps, setStamps] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
   const [stamp, setStamp] = useState("");
-
-  // para estanpas
-
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/cities/${params.city}`)
-      .then((response) => {
-        setStamps(response.data.stamps);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const [city, setCity] = useState("");
+  const [citySelected, setCitySelected] = useState(undefined);
 
   const handleChangeStamp = (evento) => {
     let value = evento.target.src;
@@ -83,11 +72,26 @@ export default function CreateRecommendation() {
     setImage(value);
   };
 
+  const handleCityChange = (evento) => {
+
+    let value = evento.target.value;   
+    setCity(value);
+    
+    // para estampas
+    let citySelected = props.cities.find((eachCity) => {
+      return eachCity.id === value;
+    });
+    setCitySelected(citySelected)
+    setStamps(citySelected.stamps)
+
+
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newRecommendation = {
-      cityId: params.city,
+      cityId: city,
       title: title,
       description: description,
       date: date,
@@ -103,8 +107,7 @@ export default function CreateRecommendation() {
         newRecommendation
       );
 
-      //usamos params para sacar el identificador de la ciudad de la url
-      navigate(`/cities/${params.city}`);
+      navigate(`/${citySelected.city}`);
     } catch (error) {
       console.log(error);
     }
@@ -175,6 +178,25 @@ export default function CreateRecommendation() {
               </div>
 
               <div className="contenedor-label-fila">
+                <label>
+                  <div>City</div>
+                  <select
+                    name="city"
+                    value={city}
+                    onChange={handleCityChange}
+                    required
+                  >
+                    <option value="">---</option>
+
+                    {props.cities.map((eachCity, index) => {
+                      return (
+                        <option value={eachCity.id} key={index}>
+                          {eachCity.city}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </label>
                 <label>
                   <div>Category</div>
                   <select
@@ -269,7 +291,7 @@ export default function CreateRecommendation() {
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
-                  <Link to={`/cities/${params.city}`}>
+                  <Link to={`/`}>
                     <button className="boton-secundario">Cancel</button>
                   </Link>
                 </div>
