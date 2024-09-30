@@ -24,7 +24,7 @@ export default function EditRecommendation() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/cities/${params.city}`)
+      .get(`${import.meta.env.VITE_SERVER_URL}/cities/${params.cityId}`)
       .then((response) => {
         setStamps(response.data.stamps);
       })
@@ -106,7 +106,7 @@ export default function EditRecommendation() {
     e.preventDefault();
 
     const recommendacionEdit = {
-      cityId: params.city,
+      cityId: params.cityId,
       title: title,
       description: description,
       date: date,

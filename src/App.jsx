@@ -40,11 +40,11 @@ function App() {
 
   <Route path="/" element={<HomePage cities ={cities}/>} />
   <Route path="/:city" element={<CityRecommendations cities={cities} />} />
-  <Route path="/:city/recommendations/:recommendationId" element={<RecommendationDetails />} />
+  <Route path="/:city/:cityId/recommendations/:recommendationId" element={<RecommendationDetails />} />
   <Route path="/create" element={<CreateRecommendation />} />
   <Route path="/about" element={<About />} />
   <Route path="*" element={<Error />} />
-  <Route path="/:city/recommendations/:recommendationId/edit" element={<EditRecommendation />} />
+  <Route path="/:city/:cityId/recommendations/:recommendationId/edit" element={<EditRecommendation />} />
   <Route path="preview" element={<CardPreview />} />
 
   </Routes>
