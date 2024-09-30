@@ -153,7 +153,7 @@ export default function CreateRecommendation() {
                     >
                       <option value="">---</option>
                       <option value="family">Family</option>
-                      <option value="traveler">Traveler</option>
+                      <option value="traveler">Solo Traveler</option>
                       <option value="pets">Pets</option>
                       <option value="patner">Patner</option>
                       <option value="friends">Friends</option>
@@ -185,7 +185,7 @@ export default function CreateRecommendation() {
                   >
                     <option value="">---</option>
                     <option value="experience">Experience</option>
-                    <option value="hidden places ">Hidden</option>
+                    <option value="hidden places ">Hidden Places</option>
                     <option value="food & drinks">Food & Drinks</option>
                   </select>
                 </label>
