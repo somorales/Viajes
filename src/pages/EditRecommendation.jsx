@@ -147,8 +147,8 @@ export default function EditRecommendation() {
   };
 
   return (
-    <div>
-      <div className="container-from">
+    <div className="container-form">
+      <div >
         <form onSubmit={handleSubmit} className="form">
           <h1> Edid your Traveltales</h1>
           {activeStep === 0 && (

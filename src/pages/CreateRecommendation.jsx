@@ -123,8 +123,8 @@ export default function CreateRecommendation(props) {
   };
 
   return (
-    <div>
-      <div className="container-from">
+    <div className="container-form" >
+      <div >
         <form onSubmit={handleSubmit} className="form">
           <h1>Create your Traveltales</h1>
           {activeStep === 0 && (
@@ -212,12 +212,13 @@ export default function CreateRecommendation(props) {
           )}
           {activeStep === 1 && (
             <div>
-              <div>
-                <div>Select the stamp</div>
+               <div>Select the stamp</div>
+              <div className="conteiner-stamp">
+               
                 {stamps.map((eachStamp, index) => {
                   return (
                     <img
-                      width={150}
+                      width={110}
                       className={
                         stamp === eachStamp ? "stamp-seleccionado" : ""
                       }
@@ -291,13 +292,13 @@ export default function CreateRecommendation(props) {
 
           {activeStep === 2 && (
             <div>
+               <img width={150} src={image} />
               <div>{title}</div>
               <div>{description}</div>
               <div>{date}</div>
               <div>{companion}</div>
               <div>{usuario}</div>
               <div>{category}</div>
-              <img width={150} src={image} />
               <img width={150} src={stamp} />
 
               <div className="contenedor-botones">
