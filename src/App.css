@@ -188,6 +188,12 @@ button.boton-mas-ancho {
   border: 1px solid black;
 }
 
+/* common styles*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /*HOMEPAGE*/
 
 #cities-box {
@@ -240,6 +246,23 @@ button.boton-mas-ancho {
   margin: 10px;
 }
 
+.menu {
+    
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+#menu-toggle:checked ~ .menu {
+
+    opacity: 1;
+    visibility: visible;
+    
+    }
+
+#burger-menu ul li {
+  list-style-type: none;
+}
+
 /* CITY RECOMMENDATIONS */
 
 /* #cityRecommendation-screen {
@@ -256,12 +279,25 @@ button.boton-mas-ancho {
   align-items: center;
   padding: 20px;
   margin: 15px 50px;
+  background-color: white;
+  border: 1px solid rgb(17, 24, 39);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 15px 50px;
 }
 
 #city-info img {
   width: 800px;
+  width: 800px;
 }
 
+#city-info h1,
+p {
+  margin: auto;
 #city-info h1,
 p {
   margin: auto;
@@ -272,17 +308,32 @@ p {
   border: 1px solid rgb(17, 24, 39);
   border-radius: 15px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 15px 50px;
   padding: 20px;
+  min-height: 40vh;
 }
 
-.recommendation-card img {
-  border-radius: 15px;
-  width: 800px;
+
+/*POSTCARD*/
+
+.postcard-left {
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-right: black solid 1px;
+  width: 50%;
 }
+
+.postcard-right {
+  width: 50%;
+  padding: 30px;
+}
+
+.postcard-right p {
+border-bottom: black solid 1px
+}
+
 
 /* FOOTER */
 
@@ -309,4 +360,9 @@ p {
   height: 100px;
   border-radius: 50px;
   object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  object-fit: cover;
 }
+

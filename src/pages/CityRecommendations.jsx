@@ -61,18 +61,25 @@ function CityRecommendations(props) {
           return (
             
               <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
-                <div onClick={flipCard} key={recommendation.id} className="recommendation-card">
-                  <img src={recommendation.image} alt={recommendation.title} />
+                <div onClick={flipCard} key={recommendation.id} className="recommendation-card"  
+                style={{backgroundImage: `url(${recommendation.image})`}} >
+                  <h2>{recommendation.title}</h2>
+                  <p>From: {recommendation.usuario}</p>
                 </div>
                 <div onClick={flipCard}
                   key={recommendation.id}
                   className="recommendation-card card-back"
                 >
-                  <h2>{recommendation.title}</h2>
+                   <div className="postcard-left" >
+                   <p>{recommendation.date}</p>
                   <p>{recommendation.description}</p>
-                  <p>{recommendation.date}</p>
+                  </div>
+                  <div className="postcard-right"> 
+                    <div className="stamps"></div> 
+                  <p>{recommendation.title}</p>
                   <p>{recommendation.companion}</p>
-                  <p>{recommendation.usuario}</p>
+                  <p>{recommendation.category}</p>
+                  </div>
                   <Link
               to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}
             ><button>Ver más</button></Link>
