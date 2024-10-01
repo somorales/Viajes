@@ -115,8 +115,8 @@ export default function EditRecommendation() {
       category === "" ||
       image === ""
     ) {
-      alert("complete all fields")
-      return
+      alert("complete all fields");
+      return;
     }
 
     const recommendacionEdit = {
@@ -128,6 +128,7 @@ export default function EditRecommendation() {
       usuario: usuario,
       category: category,
       image: image,
+      stamp: stamp,
     };
 
     try {
@@ -147,9 +148,9 @@ export default function EditRecommendation() {
 
   return (
     <div>
-      <div className="contenedor-formulario">
-        <form onSubmit={handleSubmit} className="formulario">
-          <h1>Post a Recommendation</h1>
+      <div className="container-from">
+        <form onSubmit={handleSubmit} className="form">
+          <h1> Edid your Traveltales</h1>
           {activeStep === 0 && (
             <div>
               <div>
@@ -160,13 +161,13 @@ export default function EditRecommendation() {
                     onChange={handelTitleChange}
                     name="titulo"
                     type="text"
-                    placeholder="el nombre de la recomendación"
+                    placeholder=""
                     required
                   />
                 </label>
 
                 <label>
-                  <div>Usuario</div>
+                  <div>From</div>
                   <input
                     value={usuario}
                     onChange={handelUsuarioChange}
@@ -177,61 +178,28 @@ export default function EditRecommendation() {
                   />
                 </label>
 
-                <div className="contenedor-label-fila">
+                <div>
                   <label>
-                    <div>Companion</div>
-                    <select
-                      name="companion"
-                      value={companion}
-                      onChange={handelCompanionChange}
-                      required
-                    >
-                      <option value="family">Family</option>
-                      <option value="solo traveler">Solo Traveler</option>
-                      <option value="pets">Pets</option>
-                      <option value="patner">Patner</option>
-                      <option value="friends">Friends</option>
-                    </select>
-                  </label>
-
-                  <label>
-                    <div> Date </div>
-                    <input
-                      value={date}
-                      onChange={handelDateChange}
-                      name="date"
-                      type="date"
+                    <div>Description</div>
+                    <textarea
+                      value={description}
+                      onChange={handelDescriptionChange}
+                      name="descripción"
+                      type="text"
                       placeholder=""
                       required
                     />
                   </label>
                 </div>
-              </div>
 
-              <div className="contenedor-label-fila">
                 <label>
-                  <div>Category</div>
-                  <select
-                    name="category"
-                    value={category}
-                    onChange={handelCategoryChange}
-                    required
-                  >
-                    <option value="experience">Experience</option>
-                    <option value="hidden places ">Hidden Places</option>
-                    <option value="food & drinks">Food & Drinks</option>
-                  </select>
-                </label>
-              </div>
+                  <div> Image </div>
 
-              <div>
-                <label>
-                  <div>Description</div>
-                  <textarea
-                    value={description}
-                    onChange={handelDescriptionChange}
-                    name="descripción"
-                    type="text"
+                  <input
+                    value={image}
+                    onChange={handelImageChange}
+                    name="image"
+                    type="url"
                     placeholder=""
                     required
                   />
@@ -265,18 +233,52 @@ export default function EditRecommendation() {
                   );
                 })}
               </div>
-              <label>
-                <div> Image </div>
 
-                <input
-                  value={image}
-                  onChange={handelImageChange}
-                  name="image"
-                  type="url"
-                  placeholder=""
-                  required
-                />
-              </label>
+              <div className="contenedor-label-fila">
+                <label>
+                  <div>Companion</div>
+                  <select
+                    name="companion"
+                    value={companion}
+                    onChange={handelCompanionChange}
+                    required
+                  >
+                    <option value="family">Family</option>
+                    <option value="solo traveler">Solo Traveler</option>
+                    <option value="pets">Pets</option>
+                    <option value="patner">Patner</option>
+                    <option value="friends">Friends</option>
+                  </select>
+                </label>
+
+                <label>
+                  <div> Date </div>
+                  <input
+                    value={date}
+                    onChange={handelDateChange}
+                    name="date"
+                    type="date"
+                    placeholder=""
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className="contenedor-label-fila">
+                <label>
+                  <div>Category</div>
+                  <select
+                    name="category"
+                    value={category}
+                    onChange={handelCategoryChange}
+                    required
+                  >
+                    <option value="experience">Experience</option>
+                    <option value="hidden places ">Hidden Places</option>
+                    <option value="food & drinks">Food & Drinks</option>
+                  </select>
+                </label>
+              </div>
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
@@ -302,7 +304,9 @@ export default function EditRecommendation() {
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
-                  <Link to={`"/${params.city}/${params.cityId}/recommendations/${params.recommendationId}`}>
+                  <Link
+                    to={`/${params.city}/${params.cityId}/recommendations/${params.recommendationId}`}
+                  >
                     <button className="boton-secundario">Cancel</button>
                   </Link>
                 </div>
@@ -310,7 +314,7 @@ export default function EditRecommendation() {
                   <button onClick={handlePrev}>Prev</button>
                 </div>
                 <div className="contenedor-boton">
-                  <button type="submit">Create</button>
+                  <button type="submit">Edit</button>
                 </div>
               </div>
             </div>

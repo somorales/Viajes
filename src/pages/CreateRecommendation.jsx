@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 export default function CreateRecommendation(props) {
   const params = useParams();
   const navigate = useNavigate();
@@ -73,18 +72,15 @@ export default function CreateRecommendation(props) {
   };
 
   const handleCityChange = (evento) => {
-
-    let value = evento.target.value;   
+    let value = evento.target.value;
     setCity(value);
-    
+
     // para estampas
     let citySelected = props.cities.find((eachCity) => {
       return eachCity.id === value;
     });
-    setCitySelected(citySelected)
-    setStamps(citySelected.stamps)
-
-
+    setCitySelected(citySelected);
+    setStamps(citySelected.stamps);
   };
 
   const handleSubmit = async (e) => {
@@ -98,8 +94,8 @@ export default function CreateRecommendation(props) {
       category === "" ||
       image === ""
     ) {
-      alert("completar todos los campos")
-      return
+      alert("completar todos los campos");
+      return;
     }
 
     const newRecommendation = {
@@ -111,6 +107,7 @@ export default function CreateRecommendation(props) {
       usuario: usuario,
       category: category,
       image: image,
+      stamp:stamp,
     };
 
     try {
@@ -127,9 +124,9 @@ export default function CreateRecommendation(props) {
 
   return (
     <div>
-      <div className="contenedor-formulario">
-        <form onSubmit={handleSubmit} className="formulario">
-          <h1>Post a Recommendation</h1>
+      <div className="container-from">
+        <form onSubmit={handleSubmit} className="form">
+          <h1>Create your Traveltales</h1>
           {activeStep === 0 && (
             <div>
               <div>
@@ -140,100 +137,67 @@ export default function CreateRecommendation(props) {
                     onChange={handelTitleChange}
                     name="titulo"
                     type="text"
-                    placeholder="el nombre de la recomendación"
+                    placeholder="Give your travel story a name"
                     required
                   />
                 </label>
-
-                <label>
-                  <div>Usuario</div>
-                  <input
-                    value={usuario}
-                    onChange={handelUsuarioChange}
-                    name="usuario"
-                    type="text"
-                    placeholder=""
-                    required
-                  />
-                </label>
-
                 <div className="contenedor-label-fila">
                   <label>
-                    <div>Companion</div>
-                    <select
-                      name="companion"
-                      value={companion}
-                      onChange={handelCompanionChange}
+                    <div>From</div>
+                    <input
+                      value={usuario}
+                      onChange={handelUsuarioChange}
+                      name="usuario"
+                      type="text"
+                      placeholder="your name"
                       required
-                    >
-                      <option value="">---</option>
-                      <option value="family">Family</option>
-                      <option value="traveler">Solo Traveler</option>
-                      <option value="pets">Pets</option>
-                      <option value="patner">Patner</option>
-                      <option value="friends">Friends</option>
-                    </select>
+                    />
                   </label>
 
                   <label>
-                    <div> Date </div>
-                    <input
-                      value={date}
-                      onChange={handelDateChange}
-                      name="date"
-                      type="date"
-                      placeholder=""
+                    <div>Select the City</div>
+                    <select
+                      name="city"
+                      value={city}
+                      onChange={handleCityChange}
+                      required
+                    >
+                      <option value="">---</option>
+
+                      {props.cities.map((eachCity, index) => {
+                        return (
+                          <option value={eachCity.id} key={index}>
+                            {eachCity.city}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  </label>
+                </div>
+
+                <div>
+                  <label>
+                    <div>Description</div>
+                    <textarea
+                      value={description}
+                      onChange={handelDescriptionChange}
+                      name="descripción"
+                      type="text"
+                      placeholder="Tell us about this place, what were your experiences that you want to remember, in which part of the city it is and why you recommend it."
                       required
                     />
                   </label>
                 </div>
-              </div>
 
-              <div className="contenedor-label-fila">
                 <label>
-                  <div>City</div>
-                  <select
-                    name="city"
-                    value={city}
-                    onChange={handleCityChange}
-                    required
-                  >
-                    <option value="">---</option>
+                  <div> Image </div>
 
-                    {props.cities.map((eachCity, index) => {
-                      return (
-                        <option value={eachCity.id} key={index}>
-                          {eachCity.city}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </label>
-                <label>
-                  <div>Category</div>
-                  <select
-                    name="category"
-                    value={category}
-                    onChange={handelCategoryChange}
-                    required
-                  >
-                    <option value="">---</option>
-                    <option value="experience">Experience</option>
-                    <option value="hidden places ">Hidden Places</option>
-                    <option value="food & drinks">Food & Drinks</option>
-                  </select>
-                </label>
-              </div>
-
-              <div>
-                <label>
-                  <div>Description</div>
-                  <textarea
-                    value={description}
-                    onChange={handelDescriptionChange}
-                    name="descripción"
-                    type="text"
-                    placeholder=""
+                  <input
+                    value={image}
+                    onChange={handelImageChange}
+                    name="image"
+                    type="url"
+                    placeholder="Save an image you want to remember "
                     required
                   />
                 </label>
@@ -246,7 +210,6 @@ export default function CreateRecommendation(props) {
               </div>
             </div>
           )}
-
           {activeStep === 1 && (
             <div>
               <div>
@@ -266,18 +229,54 @@ export default function CreateRecommendation(props) {
                   );
                 })}
               </div>
-              <label>
-                <div> Image </div>
 
-                <input
-                  value={image}
-                  onChange={handelImageChange}
-                  name="image"
-                  type="url"
-                  placeholder=""
-                  required
-                />
-              </label>
+              <div className="contenedor-label-fila">
+                <label>
+                  <div>Companion</div>
+                  <select
+                    name="companion"
+                    value={companion}
+                    onChange={handelCompanionChange}
+                    required
+                  >
+                    <option value="">---</option>
+                    <option value="family">Family</option>
+                    <option value="traveler">Solo Traveler</option>
+                    <option value="pets">Pets</option>
+                    <option value="patner">Patner</option>
+                    <option value="friends">Friends</option>
+                  </select>
+                </label>
+
+                <label>
+                  <div> Date </div>
+                  <input
+                    value={date}
+                    onChange={handelDateChange}
+                    name="date"
+                    type="date"
+                    placeholder=""
+                    required
+                  />
+                </label>
+              </div>
+
+              <div>
+                <label>
+                  <div>Category</div>
+                  <select
+                    name="category"
+                    value={category}
+                    onChange={handelCategoryChange}
+                    required
+                  >
+                    <option value="">---</option>
+                    <option value="experience">Experience</option>
+                    <option value="hidden places ">Hidden Places</option>
+                    <option value="food & drinks">Food & Drinks</option>
+                  </select>
+                </label>
+              </div>
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
