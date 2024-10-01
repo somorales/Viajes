@@ -13,13 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 
   font-family: 'Nunito',sans-serif;
-}
+  }
 
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: flex-start;
-  background-color: whitesmoke;
-  min-height: 100vh;
-}
