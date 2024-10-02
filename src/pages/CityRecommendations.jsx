@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
-import ReactCardFlip from "react-card-flip";
+import CityHeader from "../components/CityHeader";
+import RecommendationCard from "../components/RecommendationCard";
 
 function CityRecommendations(props) {
   const { cities } = props;
@@ -36,20 +36,9 @@ function CityRecommendations(props) {
 
   console.log("recomendaciones de esta ciudad", cityRecommendations);
 
-  const [isFlipped, setIsFlippled] = useState(false)
-
-  function flipCard () {
-    setIsFlippled(!isFlipped)
-  }
-
   return (
     <div id="cityRecommendation-screen">
-      <div id="city-info">
-        <img src={currentCity.image} alt={currentCity.city} />
-        <h1>{currentCity.city}</h1>
-        <p>{currentCity.fact}</p>
-        <p>{currentCity.tip}</p>
-      </div>
+      <CityHeader currentCity={currentCity} />
 
       {cityRecommendations.length === 0 ? (
         <h2>
@@ -59,33 +48,10 @@ function CityRecommendations(props) {
       ) : (
         cityRecommendations.map((recommendation) => {
           return (
-            
-              <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
-                <div onClick={flipCard} key={recommendation.id} className="recommendation-card"  
-                style={{backgroundImage: `url(${recommendation.image})`}} >
-                  <h2>{recommendation.title}</h2>
-                  <p>From: {recommendation.usuario}</p>
-                </div>
-                <div onClick={flipCard}
-                  key={recommendation.id}
-                  className="recommendation-card card-back"
-                >
-                   <div className="postcard-left" >
-                   <p>{recommendation.date}</p>
-                  <p>{recommendation.description}</p>
-                  </div>
-                  <div className="postcard-right"> 
-                    <div className="stamps"></div> 
-                  <p>{recommendation.title}</p>
-                  <p>{recommendation.companion}</p>
-                  <p>{recommendation.category}</p>
-                  </div>
-                  <Link
-              to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}
-            ><button>Ver más</button></Link>
-                </div>
-              </ReactCardFlip>
-
+            <RecommendationCard
+              recommendation={recommendation}
+              currentCity={currentCity}
+            />
           );
         })
       )}

@@ -51,6 +51,14 @@
   font-style: italic;
 }
 
+body {
+  margin: 0;
+  display: flex;
+  place-items: flex-start;
+  background-color: whitesmoke;
+  min-height: 100vh;
+}
+
 
 /*from*/
 
@@ -203,10 +211,32 @@ a {
   color: black;
 }
 
+button {
+  border-radius: 20px;
+  border-width: 1px;
+  background-color: #f2bc57;
+  box-shadow: 1px 1px 2px #b78c5a70;
+}
+
+button:hover {
+  background-color: #956c3d;
+  color: white;
+}
+
+.secondary-button {
+  background-color: white;
+  border: 1px solid #956c3d;
+}
+
+.secondary-button:hover {
+  background-color: rgb(249, 250, 251);
+  color: rgb(17, 24, 39);
+}
+
 /*HOMEPAGE*/
 
 #cities-box {
-  margin: 50px;
+  margin: 50 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -215,7 +245,8 @@ a {
 }
 
 #cities-box a {
-  color: black;
+  color: white;
+  text-shadow: 1px 2px 2px rgba(54, 65, 82, 0.623);
 }
 
 .main-title {
@@ -228,14 +259,15 @@ a {
   background-color: white;
   border-radius: 15px;
   border: 1px solid rgb(17, 24, 39);
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 2px 2px 7px 1px rgba(54, 65, 82, 0.5);
 }
 
 .city-card img {
@@ -287,9 +319,12 @@ a {
 
 /* CITY RECOMMENDATIONS */
 
-/* #cityRecommendation-screen {
-
-} */
+#cityRecommendation-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 #city-info {
   background-color: white;
@@ -301,7 +336,9 @@ a {
   align-items: center;
   padding: 20px;
   margin: 15px 50px;
-  background-color: white;
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1px solid rgb(17, 24, 39);
   border-radius: 15px;
   display: flex;
@@ -312,9 +349,8 @@ a {
   margin: 15px 50px;
 }
 
-#city-info img {
-  width: 800px;
-  width: 800px;
+.city-info-bg {
+  background-color: hsla(0, 0%, 100%, 0.623);
 }
 
 #city-info h1,
@@ -326,37 +362,117 @@ p {
   margin: auto;
 }
 
-.recommendation-card {
+/*POSTCARD*/
+
+.postcard {
   background-color: white;
   border: 1px solid rgb(17, 24, 39);
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 15px 50px;
-  padding: 20px;
-  min-height: 40vh;
+  margin: 15px auto;
+  width: 80%;
+  max-width: 1000px;
+  position: relative;
 }
 
+.postcard img {
+  width: 100%;
+  margin: 0;
+}
 
-/*POSTCARD*/
+#postcard-image {
+  margin: 25px;
+}
+
+.postcard h3 {
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 2px;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.postcard p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 3px;
+  margin: 0;
+  margin-right: 25px;
+}
+
+.postcard-back {
+  background-color: white;
+  border: 1px solid rgb(17, 24, 39);
+  border-radius: 15px;
+  margin: 15px auto;
+  width: 80%;
+  max-width: 1000px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.postcard-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+  padding: 10px;
+  margin: 25px;
+}
 
 .postcard-left {
   background-size: contain;
   background-repeat: no-repeat;
   border-right: black solid 1px;
   width: 50%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.postcard-left p {
+  margin: 10px;
 }
 
 .postcard-right {
   width: 50%;
-  padding: 30px;
+  padding: 5%;
+  position: relative;
+}
+
+.stamps {
+  width: 50%;
+  height: max-content;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.stamps img {
+  width: 100%;
+}
+
+.postcard-tags {
+  position: absolute;
+  bottom: 0;
 }
 
 .postcard-right p {
-border-bottom: black solid 1px
+  border-bottom: black solid 1px;
+  text-align: left;
+  margin: 0;
 }
 
+.postcard-back button {
+  margin: 20px;
+}
 
 /* FOOTER */
 
@@ -366,17 +482,52 @@ border-bottom: black solid 1px
   align-items: center;
   width: 100%;
   height: max-content;
+  margin-top: 50px;
+  bottom: 0;
 }
 
 /* ABOUT */
 
 #about {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#about-app {
+  margin: 1% 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#about-app img {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#about-app p {
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+#team {
+  background-color: white;
+  border: 1px solid rgb(17, 24, 39);
+  border-radius: 15px;
   margin: 30px auto;
   width: max-content;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
+  gap: 30px;
+}
+
+.developer {
+  margin: 30px;
 }
 .developer img {
   width: 100px;
