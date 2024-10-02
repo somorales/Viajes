@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import 'react-tiny-fab/dist/styles.css';
 import './App.css'
 import{ Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
@@ -12,13 +13,15 @@ import Error from './pages/Error'
 import EditRecommendation from './pages/EditRecommendation'
 import CardPreview from './pages/CardPreview'
 import Footer from './components/Footer'
-
+import { Fab } from 'react-tiny-fab';
+import { useNavigate } from 'react-router-dom';
 
 
 function App() {
   console.log("URL backend", import.meta.env.VITE_SERVER_URL)
 
   const [cities, setCities] = useState([])
+  const navigate = useNavigate();
 
   useEffect(()=> {
     axios.get(`${import.meta.env.VITE_SERVER_URL}/cities`)
@@ -30,6 +33,21 @@ function App() {
     })
 
   }, [])
+
+  const abStyles = {
+    position: 'absolute',
+    top: '0px',
+    right: '100%',
+    padding: '10px',
+    boxShadow: '2px 2px 7px 1px rgba(54, 65, 82, 0.5)',
+    backgroundColor: 'rgb(255 255 255 / 35%)',
+    borderRadius: '15px',
+    border: '1px solid rgb(17, 24, 39)',
+  };
+
+  const handleCreateClick = () => {
+    navigate('/create')
+  }
 
   return(
 
@@ -48,6 +66,20 @@ function App() {
   <Route path="*" element={<Error />} />
 
   </Routes>
+
+  <Fab
+    icon={"+"}
+    alwaysShowTitle={true}
+    onClick={handleCreateClick}
+    style={{ bottom: '40px', right: '50px' }}
+  >
+    <div style={abStyles}>
+      <div style={{ display: 'flex', margin: 6 }}>
+        Create TravelStories
+      </div>
+    </div>
+  </Fab>
+
   
   <Footer />
    </>

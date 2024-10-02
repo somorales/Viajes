@@ -296,7 +296,7 @@ export default function CreateRecommendation(props) {
                <img width={150} src={image} />
               <div>{title}</div>
               <div>{description}</div>
-              <div>{date}</div>
+              <div>{new Intl.DateTimeFormat("es-ES").format(Date.parse(recommendation.date))}</div>
               <div>{companion}</div>
               <div>{category}</div>
               <img width={150} src={stamp} />

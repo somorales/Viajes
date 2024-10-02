@@ -28,7 +28,7 @@ function RecommendationCard(props) {
           <div className="postcard-content">
             <div className="postcard-left">
 
-              <p>{recommendation.date}</p>
+              <p>{new Intl.DateTimeFormat("es-ES").format(Date.parse(recommendation.date))}</p>
               <p>{recommendation.description}</p>
             </div>
             <div className="postcard-right">

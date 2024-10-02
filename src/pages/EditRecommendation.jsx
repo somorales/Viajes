@@ -296,7 +296,7 @@ export default function EditRecommendation() {
             <div>
               <div>{title}</div>
               <div>{description}</div>
-              <div>{date}</div>
+              <div>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</div>
               <div>{companion}</div>
               <div>{usuario}</div>
               <div>{category}</div>

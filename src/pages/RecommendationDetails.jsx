@@ -11,6 +11,7 @@ export default function RecommendationDetails() {
   let navigate = useNavigate();
   const params = useParams();
   const [recommendation, setRecommendation] = useState(null)
+  const [city, setCity] = useState(null)
 
   useEffect(() => {
     axios
@@ -18,6 +19,19 @@ export default function RecommendationDetails() {
       .then((response) => {
 
         setRecommendation(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_SERVER_URL}/cities/${params.cityId}`)
+      .then((response) => {
+
+        setCity(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -48,6 +62,8 @@ export default function RecommendationDetails() {
 
 
   };
+  
+
 
 
 
@@ -72,9 +88,11 @@ export default function RecommendationDetails() {
                 <img src={recommendation.stamp} />
               </div>
               <div className='paragraph-container'>
-                <p><b>Date: </b>{recommendation.date}</p>
+                <p><b>Date: </b>{new Intl.DateTimeFormat("es-ES").format(Date.parse(recommendation.date))}</p>
                 <p><b>Category: </b>{recommendation.category}</p>
                 <p><b>Companion: </b>{recommendation.companion}</p>
+                <p>{city.city}, {city.country}</p>
+                
               </div>
             </div>
           </div>

@@ -682,3 +682,19 @@ p {
 .description p {
   font: "Curly Writing";
 }
+
+
+/* floating button */
+button.rtf--mb {
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+  background-color: pink;
+  border: 1px solid rgb(17, 24, 39);
+  color: rgb(17, 24, 39);
+}
+
+button.rtf--mb:hover {
+  background-color: #F05A7E;
+  color: white;
+}
