@@ -12,14 +12,14 @@ export default function NavBar() {
         </div>
         <div className="containerLink">
           <Link to={"/"} style={{ textDecoration: "none" }}>
-            <h5>Home</h5>
+            <li>Home</li>
           </Link>
           <Link to={"/about"} style={{ textDecoration: "none" }}>
-            <h5>About</h5>
+            <li>About</li>
           </Link>
        
         <Link to={"/create"} style={{ textDecoration: "none" }}> 
-            <h5>Create TravelStories</h5>
+            <li>Create TravelStories</li>
         </Link>
         </div>
     </div>
