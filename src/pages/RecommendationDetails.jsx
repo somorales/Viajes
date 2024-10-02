@@ -39,7 +39,7 @@ export default function RecommendationDetails() {
   }, []);
 
 
-  if (recommendation === null) {
+  if (recommendation === null || city === null) {
     return (<h3>...loading</h3>)
   }
 
