@@ -57,6 +57,7 @@ body {
   place-items: flex-start;
   background-color: whitesmoke;
   min-height: 100vh;
+  font-family: "Inria Serif", serif;
 }
 
 
@@ -214,26 +215,49 @@ a {
 button {
   border-radius: 20px;
   border-width: 1px;
-  background-color: #f2bc57;
-  box-shadow: 1px 1px 2px #b78c5a70;
+  background-color:#F05A7E;
+  box-shadow: 1px 1px 2px #fd93ab;
 }
 
 button:hover {
-  background-color: #956c3d;
-  color: white;
+  background-color: #fd93ab;
+  color: black;
 }
 
 .secondary-button {
-  background-color: white;
-  border: 1px solid #956c3d;
+  background-color: black;
+  border: 1px solid #fd93ab;
 }
 
 .secondary-button:hover {
   background-color: rgb(249, 250, 251);
-  color: rgb(17, 24, 39);
+  color: black;
 }
 
 /*HOMEPAGE*/
+
+#home-header {
+  margin: 50px auto ;
+  width: 80%;
+  height: min-content;
+ background-color: pink;
+  border-radius: 15px;
+  border: 1px solid rgb(17, 24, 39);
+  box-shadow: 2px 2px 7px 1px rgba(54, 65, 82, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home-header p {
+  font-style: italic;
+  font-size: 30px;
+  color: black;
+  text-align: right;
+}
 
 #cities-box {
   margin: 50 auto;
@@ -253,6 +277,7 @@ button:hover {
   color: black;
   text-align: center;
   padding: 15px;
+  font-family: "Inria Serif", serif;
 }
 
 .city-card {
@@ -280,7 +305,7 @@ button:hover {
     width: 99.8dvw;
     padding-top: 10px;
   }
-  .contentNavbar {
+  .nav-bar {
     max-width: 1280px;
     padding-inline: 0px;
     display: flex;
@@ -289,27 +314,38 @@ button:hover {
     font-family: "Inria Serif", serif;
     margin-inline: auto;
   }
-  .containerLogoNavbar {
+  .nav-bar-logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;  
   }
   
-  .containerLogoNavbar h1 {
+  .nav-bar-logo h1 {
     font-size: 1.2rem;
     font-family: "choco";
     margin: 0;
   }
-  .containerLink {
+  .nav-bar-links {
     font-size: 1.1rem;
     display: flex;
     gap: 50px;
+    margin: 0;
+    padding: 0;
   }
   
+  .nav-bar-links li {
+    list-style-type: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+  }
+  .nav-bar-links li:hover {
+    background-color: #F05A7E;
+   
+  }
   
   .navbar-linea {
-    background-color:#679499;
+    background-color:#F05A7E;
     height: 2.5px;
     margin-left: 50px;
     margin-right: 50px;
@@ -328,38 +364,36 @@ button:hover {
 
 #city-info {
   background-color: white;
-  border: 1px solid rgb(17, 24, 39);
+  border: none;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin: 15px 50px;
-  background-color: #ffffff;
+  width: 60%;
+  height: 40vh;
+  padding: 0;
+  margin: 50px;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 1px solid rgb(17, 24, 39);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin: 15px 50px;
 }
 
 .city-info-bg {
-  background-color: hsla(0, 0%, 100%, 0.623);
+  background-color: hsla(0, 0%, 100%, 0.40);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 }
 
 #city-info h1,
 p {
   margin: auto;
+  padding-right: 30px;
 }
 #city-info h1,
 p {
   margin: auto;
+  padding-left: 30px;
 }
 
 /*POSTCARD*/
