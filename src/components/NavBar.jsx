@@ -4,24 +4,31 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
 
-
-    <nav className="navbar">
-
-      <Link to={"/"}>
-        <img src="" alt="" /> Inicio
-      </Link>
-      <h1> TravelStories</h1>
-      <div id="burger-menu">
-        menu <Link to={"/about"} >About</Link>
-        <Link to={"/create"} >
-            <div>
-              <p>Create recommendation</p>
-            </div>
+    <div>
+    <div className="containerNavbar">
+      <div className="contentNavbar">
+        <div className="containerLogoNavbar">
+          <h1>TravelStories</h1>
+        </div>
+        <div className="containerLink">
+          <Link to={"/"} style={{ textDecoration: "none" }}>
+            <h5>Home</h5>
           </Link>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </nav>
-  );
+          <Link to={"/about"} style={{ textDecoration: "none" }}>
+            <h5>About</h5>
+          </Link>
+       
+        <Link to={"/create"} style={{ textDecoration: "none" }}> 
+            <h5>Create TravelStories</h5>
+        </Link>
+        </div>
+    </div>
+    <div className="navbar-linea"></div>
+    </div>
+  </div>
+);
 }
+
+
+
+    

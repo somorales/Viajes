@@ -123,10 +123,11 @@ export default function CreateRecommendation(props) {
   };
 
   return (
+    
     <div className="container-form" >
       <div >
         <form onSubmit={handleSubmit} className="form">
-          <h1>Create your Traveltales</h1>
+          <h1>Create TravelStories</h1>
           {activeStep === 0 && (
             <div>
               <div>
@@ -297,9 +298,9 @@ export default function CreateRecommendation(props) {
               <div>{description}</div>
               <div>{date}</div>
               <div>{companion}</div>
-              <div>{usuario}</div>
               <div>{category}</div>
               <img width={150} src={stamp} />
+              <div>{usuario}</div>
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">

@@ -150,7 +150,7 @@ export default function EditRecommendation() {
     <div className="container-form">
       <div >
         <form onSubmit={handleSubmit} className="form">
-          <h1> Edid your Traveltales</h1>
+          <h1> Edid TravelStories</h1>
           {activeStep === 0 && (
             <div>
               <div>
@@ -193,6 +193,7 @@ export default function EditRecommendation() {
                 </div>
 
                 <label>
+                  
                   <div> Image </div>
 
                   <input

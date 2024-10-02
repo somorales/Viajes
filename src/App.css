@@ -62,7 +62,7 @@
   text-align: left;
 }
 
-.formulario {
+.form {
   margin: 0 auto;
   background-color: white;
   display: flex;
@@ -75,14 +75,14 @@ form {
   border: 1px solid rgb(17, 24, 39);
   padding: 50px;
   border-radius: 5px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inria Serif", serif;
 }
 
 h1 {
   color: rgb(17, 24, 39);
   margin-top: 0;
   margin-bottom: 10px;
-  font-family: "", Courier;
+  font-family: "ShineTypewriter"
 }
 
 label {
@@ -106,7 +106,7 @@ input {
   border-color: rgb(107, 114, 128);
   border-width: 1px;
   padding: 6px 12px 6px 12px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inria Serif", serif;
 }
 
 .contenedor-label-fila input {
@@ -238,18 +238,46 @@ button.boton-mas-ancho {
 
 /* NAVBAR*/
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(242 188 87 / 70%);
+.containerNavbar {
+    width: 99.8dvw;
+    padding-top: 10px;
+  }
+  .contentNavbar {
+    max-width: 1280px;
+    padding-inline: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Inria Serif", serif;
+    margin-inline: auto;
+  }
+  .containerLogoNavbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+  }
   
-}
-
-
-#burger-menu {
-  padding: 5px;
-  margin: 10px;
-}
+  .containerLogoNavbar h1 {
+    font-size: 1.2rem;
+    font-family: "choco";
+    margin: 0;
+  }
+  .containerLink {
+    font-size: 1.1rem;
+    display: flex;
+    gap: 50px;
+  }
+  
+  
+  .navbar-linea {
+    background-color:#679499;
+    height: 2.5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+  
+  }
 
 /* CITY RECOMMENDATIONS */
 
@@ -338,3 +366,92 @@ p {
     border-radius: 0%;
     margin-top: 70px;
   }
+
+
+
+
+/* recommendation details */
+
+.postal-card-container-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.postal-card-container {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 580px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.postal-card-container img {
+  max-height: 350px;
+}
+
+.postal-card-container h1 {
+  font-size: 2em;
+}
+
+.postal-body-container {
+  display: flex;
+}
+
+.postal-body {
+  width: 50%;
+}
+
+.stamp-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.stamp-container img {
+  max-width: 120px;
+}
+
+.postal-body .description {
+  padding: 25px;
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+.postal-body.right {
+  border-right: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.paragraph-container {
+  padding-left: 50px;
+  padding-bottom: 30px;  
+  display: flex;
+  flex-direction: column;  
+  gap: 15px;
+  width: 85%;
+}
+
+.paragraph-container p {
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid gray;
+  padding-bottom: 5px;
+}
+
+.buttons-container-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.buttons-container {
+  display: flex;
+  width: 700px;
+  justify-content: flex-end;
+  gap: 20px;
+}  
