@@ -19,12 +19,14 @@ export default function EditRecommendation() {
   const [stamps, setStamps] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
   const [stamp, setStamp] = useState("");
+  const [city, setCity] = useState(null);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_SERVER_URL}/cities/${params.cityId}`)
       .then((response) => {
         setStamps(response.data.stamps);
+        setCity(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -294,14 +296,45 @@ export default function EditRecommendation() {
 
           {activeStep === 2 && (
             <div>
-              <div>{title}</div>
+              {/*<div>{title}</div>
               <div>{description}</div>
               <div>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</div>
               <div>{companion}</div>
               <div>{usuario}</div>
               <div>{category}</div>
               <img width={150} src={image} />
-              <img width={150} src={stamp} />
+              <img width={150} src={stamp} />*/}
+
+              <div className='postal-card-container-main'>
+                <div className="postal-card-container preview">
+                  <img src={image} alt="foto" />
+                  <h1> {title}</h1>
+
+                  <div className='postal-body-container'>
+                    <div className='postal-body right'>
+                      <div className='right-container'>
+                        <p className='description'>{description}</p>
+                      </div>
+                      <div className='right-container'>
+                        <p className='description'><b>from:</b> {usuario}</p>
+                      </div>
+                    </div>
+                    <div className='postal-body'>
+                      <div className='stamp-container'>
+                        <img src={stamp} />
+                      </div>
+                      <div className='paragraph-container'>
+                        <p><b>Date: </b>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</p>
+                        <p><b>Category: </b>{category}</p>
+                        <p><b>Companion: </b>{companion}</p>
+                        <p>{city.city}, {city.country}</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">

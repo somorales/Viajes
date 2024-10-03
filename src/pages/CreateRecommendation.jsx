@@ -219,9 +219,9 @@ export default function CreateRecommendation(props) {
                 {stamps.map((eachStamp, index) => {
                   return (
                     <img
-                      width={110}
+                
                       className={
-                        stamp === eachStamp ? "stamp-seleccionado" : ""
+                        stamp === eachStamp ? "city-stamp stamp-seleccionado" : "city-stamp"
                       }
                       onClick={handleChangeStamp}
                       src={eachStamp}
@@ -299,7 +299,7 @@ export default function CreateRecommendation(props) {
               <div>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</div>
               <div>{companion}</div>
               <div>{category}</div>
-              <img width={150} src={stamp} />
+              <img  className='city-stamp' src={stamp} />
               <div>{usuario}</div>
 
               <div className="contenedor-botones">
