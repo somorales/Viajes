@@ -41,7 +41,7 @@ function App() {
     right: '100%',
     padding: '10px',
     boxShadow: '2px 2px 7px 1px rgba(54, 65, 82, 0.5)',
-    backgroundColor: 'rgb(255 255 255 / 35%)',
+    backgroundColor: '#EEEEEE',
     borderRadius: '15px',
     border: '1px solid rgb(17, 24, 39)',
   };

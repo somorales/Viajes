@@ -92,9 +92,10 @@ export default function CreateRecommendation(props) {
       companion === "" ||
       usuario == "" ||
       category === "" ||
-      image === ""
+      image === "" ||
+      stamp === ""
     ) {
-      alert("completar todos los campos");
+      alert("Please fill in all the required fields");
       return;
     }
 
@@ -296,7 +297,7 @@ export default function CreateRecommendation(props) {
                <img width={150} src={image} />
               <div>{title}</div>
               <div>{description}</div>
-              <div>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</div>
+              <div>{date !== "" ? new Intl.DateTimeFormat("es-ES").format(Date.parse(date)) : ""}</div>
               <div>{companion}</div>
               <div>{category}</div>
               <img  className='city-stamp' src={stamp} />

@@ -296,14 +296,6 @@ export default function EditRecommendation() {
 
           {activeStep === 2 && (
             <div>
-              {/*<div>{title}</div>
-              <div>{description}</div>
-              <div>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</div>
-              <div>{companion}</div>
-              <div>{usuario}</div>
-              <div>{category}</div>
-              <img width={150} src={image} />
-              <img width={150} src={stamp} />*/}
 
               <div className='postal-card-container-main'>
                 <div className="postal-card-container preview">
@@ -316,7 +308,7 @@ export default function EditRecommendation() {
                         <p className='description'>{description}</p>
                       </div>
                       <div className='right-container'>
-                        <p className='description'><b>from:</b> {usuario}</p>
+                        <p className='description' style={{fontFamily: "Curly Writing"}}><b>from:</b> {usuario}</p>
                       </div>
                     </div>
                     <div className='postal-body'>
