@@ -2,6 +2,7 @@ import React from "react";
 
 export default function CityHeader(props) {
   const { currentCity } = props;
+  console.log("currentcity city header", currentCity)
   return (
     <div
       id="city-info"

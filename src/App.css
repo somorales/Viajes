@@ -588,6 +588,11 @@ p {
   border-radius: 10px;
 }
 
+#about-app h2 {
+  text-align: center;
+}
+
+
 #about-app p {
   width: 80%;
   padding: 10px;
@@ -808,4 +813,20 @@ button.rtf--mb:hover {
 
 .postal-card-container.preview .stamp-container {
   margin-bottom: 0;
+}
+
+
+@media (max-width: 600px) {
+  body p, button {
+    font-size: 16px; 
+  }
+
+button {
+  padding: 2% 5%;
+  margin: 0;
+}
+
+.postcard-back {
+  max-height: fit-content;
+}
 }
