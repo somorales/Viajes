@@ -168,24 +168,21 @@ select:focus {
   max-width: 426px;
 }
 
-button.boton-secundario:hover {
-  background-color: rgb(249, 250, 251);
-  color: rgb(17, 24, 39);
-}
 
 .conteiner-stamp {
   gap: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: 0.2s;
+  transition: 0.1s;
   margin-block: 10px;
+  padding-left: 50px;
 }
 
 .stamp-seleccionado {
-  border: 2px solid #f05a7e;
+  border: 1px solid #f05a7e;
   scale: 1.1;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 /* common styles*/
@@ -201,16 +198,16 @@ button {
   border-radius: 20px;
   border-width: 1px;
   background-color: #f05a7e;
-  box-shadow: 1px 1px 2px #fd93ab;
+  box-shadow: 1px 1px 2px pink;
 }
 
 button:hover {
-  background-color: #fd93ab;
+  background-color: pink;
   color: black;
 }
 
 .secondary-button {
-  background-color: #fd93ab;
+  background-color: pink;
   border: 1px solid black;
 }
 
@@ -218,6 +215,27 @@ button:hover {
   background-color: rgb(249, 250, 251);
   color: black;
 }
+
+
+.secondary{
+  background-color: pink;
+  border: 1px solid black;
+}
+
+.secondary:hover {
+  background-color: rgb(249, 250, 251);
+  color: black;
+}
+
+
+.cancel {
+  background-color: #ece3e5;
+  border: 1px solid black;
+}
+
+
+
+
 
 /*HOMEPAGE*/
 
@@ -290,6 +308,11 @@ button:hover {
   background-size: cover;
   box-shadow: 2px 2px 7px 1px rgba(54, 65, 82, 0.5);
 }
+.city-card:hover{
+  scale: 1.1;
+  transition: 0.2s;
+}
+
 
 .city-card img {
   width: 100px;
@@ -356,7 +379,7 @@ button:hover {
 }
 
 .user-icons a {
-  color: #f05a7e;
+  color: black;
 }
 
 /* CITY RECOMMENDATIONS */
@@ -652,6 +675,7 @@ p {
   width: 580px;
   border: 1px solid black;
   border-radius: 10px;
+  background-color: white;
 }
 
 .postal-card-container img {
@@ -873,6 +897,11 @@ button.rtf--mb:hover {
     padding: 10px;
     margin-bottom: 50px;
   }
+
+  .postal-main-container {
+    display: "flex"; 
+    flex-direction: "column";
+  }
 }
 
 @media (max-width: 600px) {
@@ -889,4 +918,10 @@ button.rtf--mb:hover {
   .postcard-back {
     max-height: fit-content;
   }
+}
+
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
 }

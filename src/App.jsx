@@ -16,6 +16,7 @@ import Footer from './components/Footer'
 import { Fab } from 'react-tiny-fab';
 import { useNavigate } from 'react-router-dom';
 import Favs from './pages/Favs';
+import { DotLoader } from "react-spinners";
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
   return(
 
   <>
+  {cities.length === 0 ? <div className="spinner-container"><DotLoader color="#f05a7e" /> </div> : ''}
   <NavBar/>
     
   <Routes>

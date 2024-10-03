@@ -10,7 +10,7 @@ export default function NavBar() {
     <div className="containerNavbar">
       <nav className="nav-bar">
         <div className="nav-bar-logo">
-        <Link to={"/"}><h1>TravelStories</h1></Link>
+        <Link to={"/"}><h1 style={{fontFamily: "Curly Writing"}}>TravelStories</h1></Link>
         </div>
         <ul className="nav-bar-links">
           <Link to={"/"} style={{ textDecoration: "none" }}>

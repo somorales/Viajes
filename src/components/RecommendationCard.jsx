@@ -26,7 +26,7 @@ function RecommendationCard(props) {
           <div className="postcard-image">
             <img src={recommendation.image} alt={recommendation.title} />
           </div>
-          <p>From: {recommendation.usuario}</p>
+          <p style={{fontFamily: "Curly Writing"}}   >From: {recommendation.usuario}</p>
         </div>
 
         <div
@@ -59,7 +59,7 @@ function RecommendationCard(props) {
           >
             <button>Ver más</button>
           </Link>
-          <Link to={"/favs"}><button onClick={handleFav}>♡</button></Link>
+          <Link to={"/favs"}><button className="secondary" onClick={handleFav}>♡</button></Link>
         </div>
       </ReactCardFlip>
     </>

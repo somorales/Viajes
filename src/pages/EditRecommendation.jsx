@@ -152,7 +152,7 @@ export default function EditRecommendation() {
     <div className="container-form">
       <div >
         <form onSubmit={handleSubmit} className="form">
-          <h1> Edit TravelStories</h1>
+          <h1> Edit TravelStories 🙃</h1>
           {activeStep === 0 && (
             <div>
               <div>
@@ -210,7 +210,7 @@ export default function EditRecommendation() {
               </div>
 
               <div className="contenedor-botones">
-                <div className="contenedor-boton">
+                <div className="button">
                   <button onClick={handleNext}>Next</button>
                 </div>
               </div>
@@ -285,9 +285,9 @@ export default function EditRecommendation() {
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
-                  <button onClick={handlePrev}>Prev</button>
+                  <button className="secondary"  onClick={handlePrev}>Prev</button>
                 </div>
-                <div className="contenedor-boton">
+                <div >
                   <button onClick={handleNext}>Next</button>
                 </div>
               </div>
@@ -295,7 +295,7 @@ export default function EditRecommendation() {
           )}
 
           {activeStep === 2 && (
-            <div style={{display: "flex", flexDirection: "column"}}>
+            <div className="postal-main-container">
               <div className='postal-card-container-main'>
                 <div className="postal-card-container preview">
                   <img src={image} alt="foto" />
@@ -332,11 +332,11 @@ export default function EditRecommendation() {
                   <Link
                     to={`/${params.city}/${params.cityId}/recommendations/${params.recommendationId}`}
                   >
-                    <button className="boton-secundario">Cancel</button>
+                    <button className="cancel">Cancel</button>
                   </Link>
                 </div>
                 <div className="contenedor-boton">
-                  <button onClick={handlePrev}>Prev</button>
+                  <button className="secondary" onClick={handlePrev}>Prev</button>
                 </div>
                 <div className="contenedor-boton">
                   <button type="submit">Edit</button>

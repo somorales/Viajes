@@ -128,7 +128,7 @@ export default function CreateRecommendation(props) {
     <div className="container-form" >
       <div >
         <form onSubmit={handleSubmit} className="form">
-          <h1>Create TravelStories</h1>
+          <h1>Create TravelStories ♡</h1>
           {activeStep === 0 && (
             <div>
               <div>
@@ -282,8 +282,8 @@ export default function CreateRecommendation(props) {
               </div>
 
               <div className="contenedor-botones">
-                <div className="contenedor-boton">
-                  <button className="secondary-button" onClick={handlePrev}>Prev</button>
+                <div>
+                  <button className="secondary" onClick={handlePrev}>Prev</button>
                 </div>
                 <div className="contenedor-boton">
                   <button onClick={handleNext}>Next</button>
@@ -293,7 +293,7 @@ export default function CreateRecommendation(props) {
           )}
 
           {activeStep === 2 && (
-            <div style={{display: "flex", flexDirection: "column"}}>
+            <div className="postal-main-container">
                {/* <img width={150} src={image} />
               <div>{title}</div>
               <div>{description}</div>
@@ -336,13 +336,13 @@ export default function CreateRecommendation(props) {
 
 
               <div className="contenedor-botones">
-                <div className="contenedor-boton">
+                <div>
                   <Link to={`/`}>
-                    <button className="boton-secundario">Cancel</button>
+                    <button className="cancel">Cancel</button>
                   </Link>
                 </div>
                 <div className="contenedor-boton">
-                  <button onClick={handlePrev}>Prev</button>
+                  <button className="secondary"onClick={handlePrev}>Prev</button>
                 </div>
                 <div className="contenedor-boton">
                   <button type="submit">Create</button>
