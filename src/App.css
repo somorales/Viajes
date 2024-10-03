@@ -79,6 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 550px;
 }
 
 form {
@@ -697,4 +698,56 @@ button.rtf--mb {
 button.rtf--mb:hover {
   background-color: #F05A7E;
   color: white;
+}
+
+.city-stamp {
+  width: 130px;
+  height: 120px;
+}
+
+
+/* postal card container preview */
+
+.postal-card-container.preview {
+  width: 400px;
+  height: 450px;
+  padding: 10px;
+}
+
+.postal-card-container.preview > .postal-body-container {
+  margin-top: -10px;
+}
+
+.postal-card-container.preview .description {
+  padding: 20px;
+  font-size: 0.90em;
+  line-height: 1.3em;
+}
+
+.postal-card-container.preview > img {
+  max-height: 200px;
+}
+
+.postal-card-container.preview > h1 {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.postal-card-container.preview .paragraph-container {
+  padding-left: 20px;
+  font-size: .80em;
+  padding-bottom: 0;
+}
+
+.postal-card-container.preview .stamp-container > img {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.postal-card-container.preview .postal-body.right {
+  justify-content: unset;
+}
+
+.postal-card-container.preview .stamp-container {
+  margin-bottom: 0;
 }
