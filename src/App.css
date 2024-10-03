@@ -164,11 +164,6 @@ select:focus {
 }
 
 
-.contenedor-boton button:hover {
-  background-color: #956c3d;
-  color: white;
-}
-
 .contenedor-botones {
   display: flex;
   justify-content: right;
@@ -176,10 +171,7 @@ select:focus {
   max-width: 426px;
 }
 
-button.boton-secundario {
-  background-color: white;
-  border: 1px solid #956c3d;
-}
+
 
 button.boton-secundario:hover {
   background-color: rgb(249, 250, 251);
@@ -222,8 +214,8 @@ button:hover {
 }
 
 .secondary-button {
-  background-color: black;
-  border: 1px solid #fd93ab;
+  background-color:#fd93ab;
+  border: 1px solid black;
 }
 
 .secondary-button:hover {
@@ -369,11 +361,11 @@ background-color:#F05A7E;
   .user-icons{
     padding-top: 10px;
     padding-bottom: 10px;
-
-    
-    
   }
   
+  .user-icons a {
+    color: #F05A7E;
+  }
 
 /* CITY RECOMMENDATIONS */
 
@@ -809,3 +801,75 @@ button.rtf--mb:hover {
 .postal-card-container.preview .stamp-container {
   margin-bottom: 0;
 }
+
+
+
+
+@media (max-width: 430px) {
+  .nav-bar-links {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav-bar-logo {
+    padding: 10px;
+  }
+
+  .postal-body-container {
+    flex-direction: column;
+  }
+
+  .paragraph-container {
+    padding: 0;
+  }
+
+  .postal-body.right {
+    border-bottom: 2px solid gray;
+    border-right: 0;
+  }
+
+  .postal-card-container > img {
+    max-width: 300px;
+  }
+
+  .postal-card-container {
+    width: 420px;
+    margin: 0;
+  }
+
+  form {
+    width: 350px;
+    padding: 20px;
+  }
+
+  .form {
+    height: 1000px;
+  }
+
+  .contenedor-botones {
+    /* display: flex;
+    justify-content: right;
+    gap: 1.5rem; */
+    max-width: 300px;
+    gap: 0.85em;
+  }
+
+  .container-form {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  input, textarea, select {
+    min-width: 300px;
+  }
+
+  input[type="date"] {
+    min-width: 275px;
+  }
+
+  .contenedor-label-fila {
+    flex-direction: column;
+  }
+}
+
+

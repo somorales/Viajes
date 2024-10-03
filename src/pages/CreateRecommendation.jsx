@@ -283,7 +283,7 @@ export default function CreateRecommendation(props) {
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
-                  <button onClick={handlePrev}>Prev</button>
+                  <button className="secondary-button" onClick={handlePrev}>Prev</button>
                 </div>
                 <div className="contenedor-boton">
                   <button onClick={handleNext}>Next</button>
@@ -294,14 +294,46 @@ export default function CreateRecommendation(props) {
 
           {activeStep === 2 && (
             <div>
-               <img width={150} src={image} />
+               {/* <img width={150} src={image} />
               <div>{title}</div>
               <div>{description}</div>
               <div>{date !== "" ? new Intl.DateTimeFormat("es-ES").format(Date.parse(date)) : ""}</div>
               <div>{companion}</div>
               <div>{category}</div>
               <img  className='city-stamp' src={stamp} />
-              <div>{usuario}</div>
+              <div>{usuario}</div> */}
+
+              <div className='postal-card-container-main'>
+                <div className="postal-card-container preview">
+                  <img src={image} alt="foto" />
+                  <h1> {title}</h1>
+
+                  <div className='postal-body-container'>
+                    <div className='postal-body right'>
+                      <div className='right-container'>
+                        <p className='description'>{description}</p>
+                      </div>
+                      <div className='right-container'>
+                        <p className='description' style={{fontFamily: "Curly Writing"}}><b>from:</b> {usuario}</p>
+                      </div>
+                    </div>
+                    <div className='postal-body'>
+                      <div className='stamp-container'>
+                        <img src={stamp} />
+                      </div>
+                      <div className='paragraph-container'>
+                        <p><b>Date: </b>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</p>
+                        <p><b>Category: </b>{category}</p>
+                        <p><b>Companion: </b>{companion}</p>
+                        <p>{citySelected.city}, {citySelected.country}</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">

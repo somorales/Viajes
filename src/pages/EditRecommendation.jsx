@@ -295,8 +295,7 @@ export default function EditRecommendation() {
           )}
 
           {activeStep === 2 && (
-            <div>
-
+            <div style={{display: "flex", direction: "column"}}>
               <div className='postal-card-container-main'>
                 <div className="postal-card-container preview">
                   <img src={image} alt="foto" />
