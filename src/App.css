@@ -55,12 +55,11 @@ body {
   margin: 0;
   display: flex;
   place-items: flex-start;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   min-height: 100vh;
   font-family: "Inria Serif", serif;
   position: relative;
 }
-
 
 /*from*/
 
@@ -87,14 +86,13 @@ form {
   padding: 50px;
   border-radius: 5px;
   font-family: "Inria Serif", serif;
-
 }
 
 h1 {
   color: rgb(17, 24, 39);
   margin-top: 0;
   margin-bottom: 10px;
-  font-family: "ShineTypewriter"
+  font-family: "ShineTypewriter";
 }
 
 label {
@@ -126,7 +124,7 @@ input {
 }
 
 input:focus {
-  border: 2px solid #F05A7E;
+  border: 2px solid #f05a7e;
 
   outline: none;
 }
@@ -141,7 +139,7 @@ textarea {
 }
 
 textarea:focus {
-  border: 2px solid  #F05A7E;
+  border: 2px solid #f05a7e;
   outline: none;
 }
 
@@ -153,7 +151,7 @@ select {
 }
 
 select:focus {
-  border: 2px solid #F05A7E;
+  border: 2px solid #f05a7e;
   outline: none;
 }
 
@@ -163,7 +161,6 @@ select:focus {
   align-items: center;
 }
 
-
 .contenedor-botones {
   display: flex;
   justify-content: right;
@@ -171,29 +168,24 @@ select:focus {
   max-width: 426px;
 }
 
-
-
 button.boton-secundario:hover {
   background-color: rgb(249, 250, 251);
   color: rgb(17, 24, 39);
 }
 
-
-.conteiner-stamp{
+.conteiner-stamp {
   gap: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: 0.2s;
   margin-block: 10px;
-
 }
 
 .stamp-seleccionado {
-  border: 2px solid #F05A7E;
+  border: 2px solid #f05a7e;
   scale: 1.1;
   transition: 0.5s;
-
 }
 
 /* common styles*/
@@ -208,7 +200,7 @@ button {
   width: 100px;
   border-radius: 20px;
   border-width: 1px;
-  background-color:#F05A7E;
+  background-color: #f05a7e;
   box-shadow: 1px 1px 2px #fd93ab;
 }
 
@@ -218,7 +210,7 @@ button:hover {
 }
 
 .secondary-button {
-  background-color:#fd93ab;
+  background-color: #fd93ab;
   border: 1px solid black;
 }
 
@@ -230,10 +222,10 @@ button:hover {
 /*HOMEPAGE*/
 
 #home-header {
-  margin: 50px auto ;
+  margin: 50px auto;
   width: 80%;
   height: 30vh;
- background-color: pink;
+  background-color: pink;
   border-radius: 15px;
   border: 1px solid rgb(17, 24, 39);
   box-shadow: 2px 2px 7px 1px rgba(54, 65, 82, 0.5);
@@ -258,7 +250,7 @@ button:hover {
   font-size: 30px;
   color: black;
   font-weight: bold;
-  margin:0;
+  margin: 0;
   padding: 30px;
   text-align: right;
 }
@@ -301,75 +293,71 @@ button:hover {
 
 .city-card img {
   width: 100px;
-  
 }
 
 /* NAVBAR*/
 
 .containerNavbar {
-    width: 99.8dvw;
-    padding-top: 10px;
-  }
-  .nav-bar {
-    max-width: 1280px;
-    padding-inline: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: "Inria Serif", serif;
-    margin-inline: auto;
-  }
-  .nav-bar-logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-  }
-  
-  .nav-bar-logo h1 {
-    font-size: 1.2rem;
-    font-family: "choco";
-    margin: 0;
-  }
-  .nav-bar-links {
-    font-size: 1.1rem;
-    display: flex;
-    gap: 50px;
-    margin: 0;
-    padding: 0;
-  }
+  width: 99.8dvw;
+  padding-top: 10px;
+}
+.nav-bar {
+  max-width: 1280px;
+  padding-inline: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Inria Serif", serif;
+  margin-inline: auto;
+}
+.nav-bar-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .containerLink li:hover{
-background-color:#F05A7E;
+.nav-bar-logo h1 {
+  font-size: 1.2rem;
+  font-family: "choco";
+  margin: 0;
+}
+.nav-bar-links {
+  font-size: 1.1rem;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
 
-  }
-  
-  .nav-bar-links li {
-    list-style-type: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-  }
-  .nav-bar-links li:hover {
-    background-color: #F05A7E;
-   
-  }
-  
-  .navbar-linea {
-    background-color:#F05A7E;
-    height: 2.5px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 10px;
-  
-  }
-  .user-icons{
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  
-  .user-icons a {
-    color: #F05A7E;
-  }
+.containerLink li:hover {
+  background-color: #f05a7e;
+}
+
+.nav-bar-links li {
+  list-style-type: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.nav-bar-links li:hover {
+  background-color: #f05a7e;
+}
+
+.navbar-linea {
+  background-color: #f05a7e;
+  height: 2.5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+.user-icons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.user-icons a {
+  color: #f05a7e;
+}
 
 /* CITY RECOMMENDATIONS */
 
@@ -397,7 +385,7 @@ background-color:#F05A7E;
 }
 
 .bg {
-  background-color: hsla(0, 0%, 100%, 0.40);
+  background-color: hsla(0, 0%, 100%, 0.4);
   width: 100%;
   height: 100%;
   padding: 0;
@@ -431,7 +419,7 @@ p {
 /*POSTCARD*/
 
 .postcard {
-  background-color:white;
+  background-color: white;
   border: 1px solid rgb(17, 24, 39);
   border-radius: 15px;
   margin: 15px auto;
@@ -556,9 +544,9 @@ p {
 }
 
 .team-icons {
- display: flex;
- justify-content: center;
- gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* ABOUT */
@@ -584,6 +572,10 @@ p {
   border-radius: 10px;
 }
 
+#about-app h2 {
+  text-align: center;
+}
+
 #about-app p {
   width: 80%;
   padding: 10px;
@@ -602,7 +594,6 @@ p {
   gap: 30px;
 }
 
-
 .developer {
   margin: 30px;
 }
@@ -620,19 +611,19 @@ p {
 /* details */
 
 .details-container {
-    display: center;
-    align-items: center;
-    height: 100vh;
-    text-align: left;
-    justify-content: center;
-  }
+  display: center;
+  align-items: center;
+  height: 100vh;
+  text-align: left;
+  justify-content: center;
+}
 
-  .image-conteiner {
-    width: 450px;
-    max-width: 450px;
-    border-radius: 0%;
-    margin-top: 70px;
-  }
+.image-conteiner {
+  width: 450px;
+  max-width: 450px;
+  border-radius: 0%;
+  margin-top: 70px;
+}
 
 /* ERROR PAGE*/
 
@@ -644,7 +635,6 @@ p {
   justify-content: flex-start;
   align-items: center;
 }
-
 
 /* recommendation details */
 
@@ -705,9 +695,9 @@ p {
 
 .paragraph-container {
   padding-left: 50px;
-  padding-bottom: 30px;  
+  padding-bottom: 30px;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   gap: 15px;
   width: 85%;
 }
@@ -730,11 +720,10 @@ p {
   width: 700px;
   justify-content: flex-end;
   gap: 20px;
-}  
+}
 .description p {
   font: "Curly Writing";
 }
-
 
 /* floating button */
 button.rtf--mb {
@@ -747,7 +736,7 @@ button.rtf--mb {
 }
 
 button.rtf--mb:hover {
-  background-color: #F05A7E;
+  background-color: #f05a7e;
   color: white;
 }
 
@@ -756,7 +745,6 @@ button.rtf--mb:hover {
   height: 120px;
 }
 
-
 /* postal card container preview */
 
 .postal-card-container.preview {
@@ -764,7 +752,6 @@ button.rtf--mb:hover {
   height: 450px;
   padding: 10px;
   border: 0px;
- 
 }
 
 .postal-card-container.preview > .postal-body-container {
@@ -773,7 +760,7 @@ button.rtf--mb:hover {
 
 .postal-card-container.preview .description {
   padding: 20px;
-  font-size: 0.90em;
+  font-size: 0.9em;
   line-height: 1.3em;
 }
 
@@ -789,7 +776,7 @@ button.rtf--mb:hover {
 
 .postal-card-container.preview .paragraph-container {
   padding-left: 20px;
-  font-size: .80em;
+  font-size: 0.8em;
   padding-bottom: 0;
 }
 
@@ -805,9 +792,6 @@ button.rtf--mb:hover {
 .postal-card-container.preview .stamp-container {
   margin-bottom: 0;
 }
-
-
-
 
 @media (max-width: 430px) {
   .nav-bar-links {
@@ -836,7 +820,8 @@ button.rtf--mb:hover {
     max-width: 300px;
   }
 
-  .postal-card-container.preview, .postal-card-container {
+  .postal-card-container.preview,
+  .postal-card-container {
     height: inherit;
   }
 
@@ -867,7 +852,9 @@ button.rtf--mb:hover {
     padding-right: 10px;
   }
 
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     min-width: 300px;
   }
 
@@ -888,4 +875,18 @@ button.rtf--mb:hover {
   }
 }
 
+@media (max-width: 600px) {
+  body p,
+  button {
+    font-size: 16px;
+  }
 
+  button {
+    padding: 2% 5%;
+    margin: 0;
+  }
+
+  .postcard-back {
+    max-height: fit-content;
+  }
+}
