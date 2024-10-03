@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Error() {
   return (
-    <div>
+    <div id="error">
       <p>
         Oops, I think your dream trip it´s the other way around, dear. Just
         click the button and we´ll drive you home

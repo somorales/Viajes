@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import CityHeader from "../components/CityHeader";
-import RecommendationCard from "../components/RecommendationCard";
+import CityHeader from "../components/CityHeader"
+import RecommendationCard from "../components/RecommendationCard"
+import { Link } from "react-router-dom";
 
 function CityRecommendations(props) {
   const { cities } = props;
@@ -41,10 +42,14 @@ function CityRecommendations(props) {
       <CityHeader currentCity={currentCity} />
 
       {cityRecommendations.length === 0 ? (
-        <h2>
+       <div id="no-recommendations">
+       <h2>
           Oops, sorry, we still dont have nothing to recommend you at this city
           🙃
         </h2>
+        <p>Would you like to add one of your memories?</p>
+        <Link to={"/create"}><button>Create</button></Link>
+        </div>
       ) : (
         cityRecommendations.map((recommendation) => {
           return (

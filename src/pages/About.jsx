@@ -2,6 +2,10 @@ import React from "react";
 import sofiaImg from "../images/Sofi.png";
 import angelaImg from "../images/Angela.jpg";
 import memoriesPic from "../images/memories.png";
+import { Link } from "react-router-dom";
+import { Icon } from "react-icons-kit";
+import { github } from "react-icons-kit/icomoon/github";
+import { linkedin } from "react-icons-kit/icomoon/linkedin";
 
 export default function About() {
   return (
@@ -22,15 +26,27 @@ export default function About() {
         <div className="developer">
           <img src={sofiaImg} alt="Sofia" />
           <h3>Sofia Morales</h3>
-          <a href="www.linkedin.com/in/sofimorales">LinkedIn</a>
-          <a href="https://github.com/somorales">GitHub</a>
+          <div className="team-icons">
+            <Link to={"https://github.com/somorales"}>
+              <Icon icon={github} />
+            </Link>
+            <Link to={"https://www.linkedin.com/in/sofimorales"}>
+              <Icon icon={linkedin} />
+            </Link>
+          </div>
         </div>
 
         <div className="developer">
           <img src={angelaImg} alt="Angela" />
           <h3>Angela Ruiz</h3>
-          <a href="www.linkedin.com/in/sofimorales">LinkedIn</a>
-          <a href="https://github.com/somorales">GitHub</a>
+          <div className="team-icons">
+            <Link to={"https://https://github.com/anruiz-r"}>
+              <Icon icon={github} />
+            </Link>
+            <Link to={"https://www.linkedin.com/in/angela-ruiz-rodriguez"}>
+              <Icon icon={linkedin} />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
