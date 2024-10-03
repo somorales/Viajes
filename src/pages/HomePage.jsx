@@ -1,8 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
 import CityCard from "../components/CityCard";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function HomePage(props) {
   const { cities } = props;
@@ -19,9 +19,8 @@ function HomePage(props) {
         <div id="cities-box">
           {cities.map((eachCity) => {
             return (
-              <Link to={`/${eachCity.city}`}>
-                {" "}
-                <CityCard key={eachCity.id} eachCity={eachCity} />
+              <Link key={eachCity.id} to={`/${eachCity.city}`}>
+                <CityCard eachCity={eachCity} />
               </Link>
             );
           })}

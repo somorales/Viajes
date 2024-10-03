@@ -58,6 +58,7 @@ body {
   background-color: #EEEEEE;
   min-height: 100vh;
   font-family: "Inria Serif", serif;
+  position: relative;
 }
 
 
@@ -384,7 +385,7 @@ background-color:#F05A7E;
   background-color: hsla(0, 0%, 100%, 0.40);
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 0;
 }
 
 #city-info h1,
@@ -396,6 +397,19 @@ p {
 p {
   margin: auto;
   padding-left: 30px;
+}
+
+#no-recommendations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+#no-recommendations button {
+  width: max-content;
+  margin: 20px;
 }
 
 /*POSTCARD*/
@@ -514,12 +528,21 @@ p {
 
 #footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: max-content;
+  padding: 10px;
   margin-top: 50px;
-  bottom: 0;
+  position: absolute;
+  bottom: -50;
+}
+
+.team-icons {
+ display: flex;
+ justify-content: center;
+ gap: 20px;
 }
 
 /* ABOUT */
@@ -540,8 +563,9 @@ p {
 }
 
 #about-app img {
-  width: 80%;
+  width: 60%;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 #about-app p {
@@ -592,6 +616,17 @@ p {
     border-radius: 0%;
     margin-top: 70px;
   }
+
+/* ERROR PAGE*/
+
+#error {
+  width: 80%;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 
 /* recommendation details */
