@@ -293,7 +293,7 @@ export default function CreateRecommendation(props) {
           )}
 
           {activeStep === 2 && (
-            <div>
+            <div style={{display: "flex", flexDirection: "column"}}>
                {/* <img width={150} src={image} />
               <div>{title}</div>
               <div>{description}</div>
@@ -322,10 +322,10 @@ export default function CreateRecommendation(props) {
                         <img src={stamp} />
                       </div>
                       <div className='paragraph-container'>
-                        <p><b>Date: </b>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</p>
+                        <p><b>Date: </b>{date !== "" ? new Intl.DateTimeFormat("es-ES").format(Date.parse(date)) : "" }</p>
                         <p><b>Category: </b>{category}</p>
                         <p><b>Companion: </b>{companion}</p>
-                        <p>{citySelected.city}, {citySelected.country}</p>
+                        <p>{citySelected && citySelected.city}, {citySelected && citySelected.country}</p>
                         
                       </div>
                     </div>

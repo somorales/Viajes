@@ -178,18 +178,22 @@ button.boton-secundario:hover {
   color: rgb(17, 24, 39);
 }
 
-button.boton-mas-ancho {
-  width: 130px;
-}
 
 .conteiner-stamp{
-    display: flex;
-    gap:20px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.2s;
+  margin-block: 10px;
 
 }
 
 .stamp-seleccionado {
-  border: 1px solid black;
+  border: 2px solid #F05A7E;
+  scale: 1.1;
+  transition: 0.5s;
+
 }
 
 /* common styles*/
@@ -832,9 +836,17 @@ button.rtf--mb:hover {
     max-width: 300px;
   }
 
+  .postal-card-container.preview, .postal-card-container {
+    height: inherit;
+  }
+
   .postal-card-container {
     width: 420px;
     margin: 0;
+  }
+
+  .postal-body {
+    width: 100%;
   }
 
   form {
@@ -843,14 +855,10 @@ button.rtf--mb:hover {
   }
 
   .form {
-    height: 1000px;
+    height: inherit;
   }
 
   .contenedor-botones {
-    /* display: flex;
-    justify-content: right;
-    gap: 1.5rem; */
-    max-width: 300px;
     gap: 0.85em;
   }
 
@@ -869,6 +877,14 @@ button.rtf--mb:hover {
 
   .contenedor-label-fila {
     flex-direction: column;
+  }
+
+  .container-details {
+    display: "flex";
+    flex-direction: "column";
+    max-width: 410px;
+    padding: 10px;
+    margin-bottom: 50px;
   }
 }
 

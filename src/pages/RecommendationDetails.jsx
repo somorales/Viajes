@@ -56,7 +56,7 @@ export default function RecommendationDetails() {
   };
 
   return (
-    <div>
+    <div className="container-details">
       <div className="postal-card-container-main">
         <div className="postal-card-container">
           <img src={recommendation.image} alt="foto" />

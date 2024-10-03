@@ -220,7 +220,7 @@ export default function EditRecommendation() {
           {activeStep === 1 && (
             <div>
               <div>
-                <div>Select the stamp</div>
+                <div><b>Select the stamp</b></div>
                 {stamps.map((eachStamp, index) => {
                   return (
                     <img
@@ -295,7 +295,7 @@ export default function EditRecommendation() {
           )}
 
           {activeStep === 2 && (
-            <div style={{display: "flex", direction: "column"}}>
+            <div style={{display: "flex", flexDirection: "column"}}>
               <div className='postal-card-container-main'>
                 <div className="postal-card-container preview">
                   <img src={image} alt="foto" />
