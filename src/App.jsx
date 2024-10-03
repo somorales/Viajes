@@ -15,6 +15,7 @@ import CardPreview from './pages/CardPreview'
 import Footer from './components/Footer'
 import { Fab } from 'react-tiny-fab';
 import { useNavigate } from 'react-router-dom';
+import Favs from './pages/Favs';
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
     navigate('/create')
   }
 
+  const[favs,setFavs]=useState([])
+
   return(
 
   <>
@@ -57,13 +60,14 @@ function App() {
   <Routes>
 
   <Route path="/" element={<HomePage cities ={cities}/>} />
-  <Route path="/:city" element={<CityRecommendations cities={cities} />} />
+  <Route path="/:city" element={<CityRecommendations cities={cities} favs={favs} setFavs={setFavs}/>} />
   <Route path="/:city/:cityId/recommendations/:recommendationId" element={<RecommendationDetails />} />
   <Route path="/create" element={<CreateRecommendation cities={cities} />} />
   <Route path="/about" element={<About />} />
   <Route path="/:city/:cityId/recommendations/:recommendationId/edit" element={<EditRecommendation />} />
   <Route path="preview" element={<CardPreview />} />
   <Route path="*" element={<Error />} />
+  <Route path="/favs" element={<Favs favs={favs} setFavs={setFavs} />} />
 
   </Routes>
 

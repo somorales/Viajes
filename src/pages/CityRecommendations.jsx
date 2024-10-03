@@ -6,7 +6,7 @@ import RecommendationCard from "../components/RecommendationCard"
 import { Link } from "react-router-dom";
 
 function CityRecommendations(props) {
-  const { cities } = props;
+  const { cities, favs, setFavs } = props;
   const [recommendations, setRecommendations] = useState([]);
   const params = useParams();
 
@@ -38,11 +38,11 @@ function CityRecommendations(props) {
   console.log("recomendaciones de esta ciudad", cityRecommendations);
 
   return (
-    <div id="cityRecommendation-screen">
+    <div className="recommendation-screen">
       <CityHeader currentCity={currentCity} />
 
       {cityRecommendations.length === 0 ? (
-       <div id="no-recommendations">
+       <div className="no-recommendations">
        <h2>
           Oops, sorry, we still dont have nothing to recommend you at this city
           🙃
@@ -56,6 +56,8 @@ function CityRecommendations(props) {
             <RecommendationCard
               recommendation={recommendation}
               currentCity={currentCity}
+              favs={favs}
+              setFavs={setFavs}
             />
           );
         })

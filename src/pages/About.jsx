@@ -39,7 +39,7 @@ export default function About() {
         <div className="developer">
           <img src={angelaImg} alt="Angela" />
           <h3>Angela Ruiz</h3>
-          <div className="team-icons">
+          <div  className="team-icons">
             <Link to={"https://https://github.com/anruiz-r"}>
               <Icon icon={github} />
             </Link>

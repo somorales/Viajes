@@ -7,7 +7,7 @@ export default function CityHeader(props) {
       id="city-info"
       style={{ backgroundImage: `url(${currentCity.image})` }}
     >
-      <div className="city-info-bg">
+      <div className="bg">
         <h1>{currentCity.city}</h1>
         <p>{currentCity.fact}</p>
         <p>{currentCity.tip}</p>

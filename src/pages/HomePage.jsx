@@ -3,6 +3,7 @@ import CityCard from "../components/CityCard";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import memoriesPic from "../images/memories.png";
 
 function HomePage(props) {
   const { cities } = props;
@@ -11,8 +12,10 @@ function HomePage(props) {
 
   return (
     <>
-      <div id="home-header">
+      <div id="home-header" style={{backgroundImage:`url(${memoriesPic})`}}>
+        <div  id="home-header-bg" >
         <p>Tell us your story, create new ones.</p>
+        </div>
       </div>
       <div>
         <h1 className="main-title">Choose a city</h1>

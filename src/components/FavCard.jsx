@@ -1,11 +1,11 @@
 import React from "react";
 import ReactCardFlip from "react-card-flip";
-import { Link, useNavigate } from "react-router-dom";
+//import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 
-function RecommendationCard(props) {
-  const { recommendation, currentCity, favs, setFavs } = props;
+function FavCard(props) {
+  const { eachFav, favs, setFavs } = props;
 
   const [isFlipped, setIsFlippled] = useState(false);
 
@@ -13,57 +13,60 @@ function RecommendationCard(props) {
     setIsFlippled(!isFlipped);
   }
 
-  const handleFav=()=>{
-    setFavs([recommendation, ...favs])
-    console.log(favs, "favoritos")
-  }
+//    const handleDeleteFav=()=>{
+//     const upDatedFavs= [...favs]
+//     upDatedFavs.splice[favs.len]
+//   }
+        // const updatedFavs=[...favs]
+        // updatedFavs.splice(recommendation)
+        // setFavs(fav)
 
   return (
     <>
       <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
-        <div onClick={flipCard} key={recommendation.id} className="postcard">
-          <h3>{recommendation.title}</h3>
+        <div onClick={flipCard} key={eachFav} className="postcard">
+          <h3>{eachFav.title}</h3>
           <div className="postcard-image">
-            <img src={recommendation.image} alt={recommendation.title} />
+            <img src={eachFav.image} alt={eachFav.title} />
           </div>
-          <p>From: {recommendation.usuario}</p>
+          <p>From: {eachFav.usuario}</p>
         </div>
 
         <div
           onClick={flipCard}
-          key={recommendation.id}
+          key={eachFav}
           className="postcard-back"
         >
           <div className="postcard-content">
             <div className="postcard-left">
               <p>
                 {new Intl.DateTimeFormat("es-ES").format(
-                  Date.parse(recommendation.date)
+                  Date.parse(eachFav.date)
                 )}
               </p>
-              <p>{recommendation.description}</p>
+              <p>{eachFav.description}</p>
             </div>
             <div className="postcard-right">
               <div className="stamps">
-                <img src={recommendation.stamp} />
+                <img src={eachFav.stamp} />
               </div>
               <div className="postcard-tags">
-                <p>{recommendation.title}</p>
-                <p>{recommendation.companion}</p>
-                <p>{recommendation.category}</p>
+                <p>{eachFav.title}</p>
+                <p>{eachFav.companion}</p>
+                <p>{eachFav.category}</p>
               </div>
             </div>
           </div>
-          <Link
+        {/* <Link
             to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}
           >
-            <button>Ver más</button>
-          </Link>
-          <Link to={"/favs"}><button onClick={handleFav}>♡</button></Link>
+         <button>Ver más</button> */}
+          {/* </Link>
+          <Link to={"/favs"}><button onClick={handleFav}></button></Link> */}
         </div>
       </ReactCardFlip>
     </>
   );
 }
 
-export default RecommendationCard;
+export default FavCard;
