@@ -56,9 +56,9 @@ function App() {
   return(
 
   <>
-  {cities.length === 0 ? <div className="spinner-container"><DotLoader color="#f05a7e" /> </div> : ''}
+  
   <NavBar/>
-    
+
   <Routes>
 
   <Route path="/" element={<HomePage cities ={cities}/>} />
@@ -72,7 +72,7 @@ function App() {
   <Route path="/favs" element={<Favs favs={favs} setFavs={setFavs} />} />
 
   </Routes>
-
+ {cities.length === 0 ? <div className="spinner-container"><DotLoader color="#f05a7e" /> </div> : ''}
   <Fab
     icon={"+"}
     alwaysShowTitle={true}
