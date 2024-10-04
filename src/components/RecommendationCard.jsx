@@ -3,7 +3,6 @@ import ReactCardFlip from "react-card-flip";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-
 function RecommendationCard(props) {
   const { recommendation, currentCity, favs, setFavs } = props;
 
@@ -13,10 +12,10 @@ function RecommendationCard(props) {
     setIsFlippled(!isFlipped);
   }
 
-  const handleFav=()=>{
-    setFavs([recommendation, ...favs])
-    console.log(favs, "favoritos")
-  }
+  const handleFav = () => {
+    setFavs([recommendation, ...favs]);
+    console.log(favs, "favoritos");
+  };
 
   return (
     <>
@@ -26,7 +25,9 @@ function RecommendationCard(props) {
           <div className="postcard-image">
             <img src={recommendation.image} alt={recommendation.title} />
           </div>
-          <p style={{fontFamily: "Curly Writing"}}   >From: {recommendation.usuario}</p>
+          <p style={{ fontFamily: "Curly Writing" }}>
+            From: {recommendation.usuario}
+          </p>
         </div>
 
         <div
@@ -54,12 +55,18 @@ function RecommendationCard(props) {
               </div>
             </div>
           </div>
-          <Link
-            to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}
-          >
-            <button>Ver más</button>
-          </Link>
-          <Link to={"/favs"}><button className="secondary" onClick={handleFav}>♡</button></Link>
+          <div id="postcard-buttons">
+            <Link
+              to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}
+            >
+              <button>Ver más</button>
+            </Link>
+            <Link to={"/favs"}>
+              <button className="secondary" onClick={handleFav}>
+                ♡
+              </button>
+            </Link>
+          </div>
         </div>
       </ReactCardFlip>
     </>

@@ -539,6 +539,12 @@ p {
   margin: 0;
 }
 
+#postcard-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+
 .postcard-back button {
   margin: 20px;
 }
