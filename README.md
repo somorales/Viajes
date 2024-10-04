@@ -6,60 +6,72 @@
 
 ## Description
 
-**NOTE -** Describe your project in one/two lines.
+TravelStories es una aplicación que permite a los usuarios compartir sus experiencias de viajes a través de historias y relatos. Los usuarios pueden crear, editar y visualizar historias de diferentes destinos, además de interactuar con otros viajeros.
+
 #### [Client Repo here](https://github.com/somorales/Viajes)
 #### [Server Repo here](https://github.com/somorales/Viajes-backend)
 
 ## Technologies, Libraries & APIs used
 
-**NOTE -** List here all technologies used in the project like HTML, CSS, Javascript, React, axios, Bootstrap, etc.
+- **Frontend:** React, HTML5, CSS3, JavaScript
+- **Backend:** Node.js
+- **Styling:** Bootstrap
+- **API Integration:** Axios
+- **Version Control:** GitHub
+- **Deployment:** Netlify (Frontend),Render (Backend)
 
 ## Backlog Functionalities
 
-**NOTE -** List here all functionalities you wish to add to your proyect later or you are currently working on
+- **Like/Comment System:** Añadir funcionalidad para que los usuarios puedan dar "me gusta" y comentar las historias de otros usuarios.
+- **Search Filters:** Mejorar el sistema de búsqueda de historias por destinos, fechas y palabras clave.
+- **Followers System:** Implementar una funcionalidad para que los usuarios puedan seguir a otros viajeros.
+- **Story Drafts:** Permitir a los usuarios guardar borradores de historias para publicarlas más tarde.
+- **Story Categories:** Añadir categorías temáticas para las historias (aventura, cultura, gastronómica, etc.).
+- **Multimedia Integration:** Permitir a los usuarios subir imágenes y videos relacionados con sus historias de viaje.
+- **Progressive Web App (PWA):** Convertir la app en una PWA para ofrecer una mejor experiencia de usuario offline.
 
 # Client Structure
 
 ## User Stories
 
-**NOTE -**  List here all the actions a user can do in the app. Example:
-
-- **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault 
-- **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
-- **homepage** - As a user I want to be able to access the homepage so that I see what the app is about and login and signup
-- **sign up** - As a user I want to sign up on the webpage so that I can see all the events that I could attend
-- **login** - As a user I want to be able to log in on the webpage so that I can get back to my account
-- **logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
-- **events list** - As a user I want to see all the events available so that I can choose which ones I want to attend
-- **events create** - As a user I want to create an event so that I can invite others to attend
+- **404** - Como usuario, quiero ver una página 404 cuando intento acceder a una página que no existe para saber que he cometido un error.
+- **500** - Como usuario, quiero ver una página de error cuando hay un problema en el servidor para saber que no es culpa mía.
+- **homepage** - Como usuario, quiero poder acceder a la página de inicio para entender de qué trata la aplicación y registrarme o iniciar sesión.
+- **sign up** - Como usuario, quiero registrarme en la página para poder compartir mis historias de viajes.
+- **login** - Como usuario, quiero iniciar sesión para acceder a mi cuenta y gestionar mis historias de viaje.
+- **logout** - Como usuario, quiero poder cerrar sesión para asegurarme de que nadie más accede a mi cuenta.
+- **profile** - Como usuario, quiero acceder a mi perfil para editar mis datos personales y ver mis historias guardadas.
+- **create story** - Como usuario, quiero crear una nueva historia de viaje para compartir mis experiencias con otros usuarios.
+- **edit story** - Como usuario, quiero poder editar una historia previamente creada para corregir errores o añadir más información.
+- **delete story** - Como usuario, quiero eliminar una historia que ya no quiero compartir.
+- **view stories** - Como usuario, quiero ver una lista de todas las historias de viaje publicadas por otros usuarios.
 
 ## Client Routes
 
-**NOTE -** Use below table to list your frontend routes
-
-## React Router Routes (React App)
-| Path                      | Page            | Components        | Behavior                                                      |
-| ------------------------- | ----------------| ----------------  |  ------------------------------------------------------------  |
-| `/`                       | Home            |                   | Home page                                                     |
-| `/signup`                 | Signup          |                   | Signup form, link to login, navigate to homepage after signup |
-| `/login`                  | Login           |                   | Login form, link to signup, navigate to homepage after login  |
-| `/profile`                | Profile         | EditProfile       | Navigate to homepage after logout, expire session             |
-| `/games/list`             | GameList        | AddGame, GameCard | Shows all films on backlog                                    |
-| `/games/edit`             | GamesEdit       |                   | Shows all games on backlog                                    |
-| `/games/favourites`       | FavouriteList   | GameCard          | Shows all games on backlog                                    |
+| Path                                                   | Page                   | Components             | Behavior                                                      |
+| ------------------------------------------------------ | ---------------------- | ---------------------- | ------------------------------------------------------------- |
+| `/`                                                    | HomePage               | Navbar, Footer          | Página de inicio con información general de la aplicación y las ciudades |
+| `/:city`                                               | CityRecommendations     | CityCard, Favs          | Muestra recomendaciones de la ciudad seleccionada              |
+| `/:city/:cityId/recommendations/:recommendationId`     | RecommendationDetails   | RecommendationCard      | Vista detallada de una recomendación específica                |
+| `/create`                                              | CreateRecommendation    | RecommendationForm      | Formulario para crear una nueva recomendación de viaje         |
+| `/about`                                               | About                  | InfoSection             | Página con información sobre la aplicación y su propósito      |
+| `/:city/:cityId/recommendations/:recommendationId/edit`| EditRecommendation      | EditForm                | Formulario para editar una recomendación existente             |
+| `/preview`                                             | CardPreview            | CardView                | Vista previa de una tarjeta de recomendación                  |
+| `/favs`                                                | Favs                   | FavsCard                | Muestra las recomendaciones marcadas como favoritas            |
+| `*`                                                    | Error                  | ErrorPage               | Página de error cuando la ruta no existe                      |
 
 ## Other Components
 
-- Navbar
-- Footer
-  
+- **Navbar:** Barra de navegación con enlaces a las principales secciones de la app (inicio, perfil, historias).
+- **Footer:** Pie de página con información de contacto y links a redes sociales.
+
 ## Links
 
 ### Collaborators
 
-[Developer 1 name](https://https://github.com/anruiz-r)
+[Angela Ruiz](https://https://github.com/anruiz-r)
 
-[Developer 2 name](https://github.com/somorales)
+[Sofia Morales](https://github.com/somorales)
 
 ### Project
 
@@ -75,4 +87,4 @@
 
 ### Slides
 
-[Slides Link](www.your-slides-url-here.com)
+[Slides Link](https://www.figma.com/board/4sVdUtalSetB9V07HbKqwa/Untitled?node-id=0-1&node-type=canvas&t=LUjbhfQEYBU4J3mw-0)
