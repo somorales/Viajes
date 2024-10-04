@@ -9,6 +9,7 @@
 TravelStories is an application that allows users to share their travel experiences through stories and narratives. Users can create, edit, and view stories from different destinations, as well as interact with other travelers.
 
 #### [Client Repo here](https://github.com/somorales/Viajes)
+
 #### [Server Repo here](https://github.com/somorales/Viajes-backend)
 
 ## Technologies, Libraries & APIs used
@@ -21,12 +22,12 @@ TravelStories is an application that allows users to share their travel experien
 - **Deployment:** Netlify (Frontend), Render (Backend)
 
 ## Backlog Functionalities
+
 - **Category Filters:** Add filtering options by category (Eat & Drink, Experiences, Hidden Places).
 - **Add to Favorites:** Allow users to save recommendations to "My Trips," which are suggestions kept for future visits to a destination.
 - **User’s Recommendations Section:** Create a section where users can view recommendations they have published.
 - **Favorite Recommendations by City:** Add filtering functionality to display favorite recommendations based on the selected city.
 - **Delete Recommendations:** Allow users to delete recommendations they no longer want to share.
-
 
 # Client Structure
 
@@ -41,16 +42,16 @@ TravelStories is an application that allows users to share their travel experien
 
 ## Client Routes
 
-| Path                                                   | Page                   | Components             | Behavior                                                      |
-| ------------------------------------------------------ | ---------------------- | ---------------------- | ------------------------------------------------------------- |
-| `/`                                                    | HomePage               | Navbar, Footer          | Home page with general information about the app and cities    |
-| `/:city`                                               | CityRecommendations     | CityCard, Favs          | Displays recommendations for the selected city                 |
-| `/:city/:cityId/recommendations/:recommendationId`     | RecommendationDetails   | RecommendationCard      | Detailed view of a specific recommendation                     |
-| `/create`                                              | CreateRecommendation    | RecommendationForm      | Form to create a new travel recommendation                     |
-| `/about`                                               | About                  | InfoSection             | Page with information about the app and its purpose            |
-| `/:city/:cityId/recommendations/:recommendationId/edit`| EditRecommendation      | EditForm                | Form to edit an existing recommendation                        |
-| `/favs`                                                | Favs                   | FavsCard                | Displays recommendations marked as favorites                   |
-| `*`                                                    | Error                  | ErrorPage               | Error page when the route doesn't exist                        |
+| Path                                                    | Page                  | Components         | Behavior                                                    |
+| ------------------------------------------------------- | --------------------- | ------------------ | ----------------------------------------------------------- |
+| `/`                                                     | HomePage              | Navbar, Footer     | Home page with general information about the app and cities |
+| `/:city`                                                | CityRecommendations   | CityCard, Favs     | Displays recommendations for the selected city              |
+| `/:city/:cityId/recommendations/:recommendationId`      | RecommendationDetails | RecommendationCard | Detailed view of a specific recommendation                  |
+| `/create`                                               | CreateRecommendation  | RecommendationForm | Form to create a new travel recommendation                  |
+| `/about`                                                | About                 | InfoSection        | Page with information about the app and its purpose         |
+| `/:city/:cityId/recommendations/:recommendationId/edit` | EditRecommendation    | EditForm           | Form to edit an existing recommendation                     |
+| `/favs`                                                 | Favs                  | FavsCard           | Displays recommendations marked as favorites                |
+| `*`                                                     | Error                 | ErrorPage          | Error page when the route doesn't exist                     |
 
 ## Other Components
 
@@ -80,4 +81,3 @@ TravelStories is an application that allows users to share their travel experien
 ### Slides
 
 [Slides Link](https://www.figma.com/board/4sVdUtalSetB9V07HbKqwa/Untitled?node-id=0-1&node-type=canvas&t=LUjbhfQEYBU4J3mw-0)
-

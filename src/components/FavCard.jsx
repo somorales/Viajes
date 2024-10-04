@@ -1,8 +1,6 @@
 import React from "react";
 import ReactCardFlip from "react-card-flip";
-//import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
 
 function FavCard(props) {
   const { eachFav, favs, setFavs } = props;
@@ -12,14 +10,6 @@ function FavCard(props) {
   function flipCard() {
     setIsFlippled(!isFlipped);
   }
-
-//    const handleDeleteFav=()=>{
-//     const upDatedFavs= [...favs]
-//     upDatedFavs.splice[favs.len]
-//   }
-        // const updatedFavs=[...favs]
-        // updatedFavs.splice(recommendation)
-        // setFavs(fav)
 
   return (
     <>
@@ -32,11 +22,7 @@ function FavCard(props) {
           <p>From: {eachFav.usuario}</p>
         </div>
 
-        <div
-          onClick={flipCard}
-          key={eachFav}
-          className="postcard-back"
-        >
+        <div onClick={flipCard} key={eachFav} className="postcard-back">
           <div className="postcard-content">
             <div className="postcard-left">
               <p>
@@ -57,12 +43,6 @@ function FavCard(props) {
               </div>
             </div>
           </div>
-        {/* <Link
-            to={`/${currentCity.city}/${currentCity.id}/recommendations/${recommendation.id}`}
-          >
-         <button>Ver más</button> */}
-          {/* </Link>
-          <Link to={"/favs"}><button onClick={handleFav}></button></Link> */}
         </div>
       </ReactCardFlip>
     </>

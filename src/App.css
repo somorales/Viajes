@@ -168,7 +168,6 @@ select:focus {
   max-width: 426px;
 }
 
-
 .conteiner-stamp {
   gap: 40px;
   display: flex;
@@ -216,8 +215,7 @@ button:hover {
   color: black;
 }
 
-
-.secondary{
+.secondary {
   background-color: pink;
   border: 1px solid black;
 }
@@ -227,15 +225,10 @@ button:hover {
   color: black;
 }
 
-
 .cancel {
   background-color: #ece3e5;
   border: 1px solid black;
 }
-
-
-
-
 
 /*HOMEPAGE*/
 
@@ -308,11 +301,10 @@ button:hover {
   background-size: cover;
   box-shadow: 2px 2px 7px 1px rgba(54, 65, 82, 0.5);
 }
-.city-card:hover{
+.city-card:hover {
   scale: 1.1;
   transition: 0.2s;
 }
-
 
 .city-card img {
   width: 100px;
@@ -899,7 +891,7 @@ button.rtf--mb:hover {
   }
 
   .postal-main-container {
-    display: "flex"; 
+    display: "flex";
     flex-direction: "column";
   }
 }
@@ -919,7 +911,6 @@ button.rtf--mb:hover {
     max-height: fit-content;
   }
 }
-
 
 .spinner-container {
   display: flex;

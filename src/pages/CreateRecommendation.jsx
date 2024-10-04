@@ -108,7 +108,7 @@ export default function CreateRecommendation(props) {
       usuario: usuario,
       category: category,
       image: image,
-      stamp:stamp,
+      stamp: stamp,
     };
 
     try {
@@ -124,9 +124,8 @@ export default function CreateRecommendation(props) {
   };
 
   return (
-    
-    <div className="container-form" >
-      <div >
+    <div className="container-form">
+      <div>
         <form onSubmit={handleSubmit} className="form">
           <h1>Create TravelStories ♡</h1>
           {activeStep === 0 && (
@@ -214,15 +213,15 @@ export default function CreateRecommendation(props) {
           )}
           {activeStep === 1 && (
             <div>
-               <div>Select the stamp</div>
+              <div>Select the stamp</div>
               <div className="conteiner-stamp">
-               
                 {stamps.map((eachStamp, index) => {
                   return (
                     <img
-                
                       className={
-                        stamp === eachStamp ? "city-stamp stamp-seleccionado" : "city-stamp"
+                        stamp === eachStamp
+                          ? "city-stamp stamp-seleccionado"
+                          : "city-stamp"
                       }
                       onClick={handleChangeStamp}
                       src={eachStamp}
@@ -283,7 +282,9 @@ export default function CreateRecommendation(props) {
 
               <div className="contenedor-botones">
                 <div>
-                  <button className="secondary" onClick={handlePrev}>Prev</button>
+                  <button className="secondary" onClick={handlePrev}>
+                    Prev
+                  </button>
                 </div>
                 <div className="contenedor-boton">
                   <button onClick={handleNext}>Next</button>
@@ -294,46 +295,54 @@ export default function CreateRecommendation(props) {
 
           {activeStep === 2 && (
             <div className="postal-main-container">
-               {/* <img width={150} src={image} />
-              <div>{title}</div>
-              <div>{description}</div>
-              <div>{date !== "" ? new Intl.DateTimeFormat("es-ES").format(Date.parse(date)) : ""}</div>
-              <div>{companion}</div>
-              <div>{category}</div>
-              <img  className='city-stamp' src={stamp} />
-              <div>{usuario}</div> */}
-
-              <div className='postal-card-container-main'>
+              <div className="postal-card-container-main">
                 <div className="postal-card-container preview">
                   <img src={image} alt="foto" />
                   <h1> {title}</h1>
-
-                  <div className='postal-body-container'>
-                    <div className='postal-body right'>
-                      <div className='right-container'>
-                        <p className='description'>{description}</p>
+                  <div className="postal-body-container">
+                    <div className="postal-body right">
+                      <div className="right-container">
+                        <p className="description">{description}</p>
                       </div>
-                      <div className='right-container'>
-                        <p className='description' style={{fontFamily: "Curly Writing"}}><b>from:</b> {usuario}</p>
+                      <div className="right-container">
+                        <p
+                          className="description"
+                          style={{ fontFamily: "Curly Writing" }}
+                        >
+                          <b>from:</b> {usuario}
+                        </p>
                       </div>
                     </div>
-                    <div className='postal-body'>
-                      <div className='stamp-container'>
+                    <div className="postal-body">
+                      <div className="stamp-container">
                         <img src={stamp} />
                       </div>
-                      <div className='paragraph-container'>
-                        <p><b>Date: </b>{date !== "" ? new Intl.DateTimeFormat("es-ES").format(Date.parse(date)) : "" }</p>
-                        <p><b>Category: </b>{category}</p>
-                        <p><b>Companion: </b>{companion}</p>
-                        <p>{citySelected && citySelected.city}, {citySelected && citySelected.country}</p>
-                        
+                      <div className="paragraph-container">
+                        <p>
+                          <b>Date: </b>
+                          {date !== ""
+                            ? new Intl.DateTimeFormat("es-ES").format(
+                                Date.parse(date)
+                              )
+                            : ""}
+                        </p>
+                        <p>
+                          <b>Category: </b>
+                          {category}
+                        </p>
+                        <p>
+                          <b>Companion: </b>
+                          {companion}
+                        </p>
+                        <p>
+                          {citySelected && citySelected.city},{" "}
+                          {citySelected && citySelected.country}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-
 
               <div className="contenedor-botones">
                 <div>
@@ -342,7 +351,9 @@ export default function CreateRecommendation(props) {
                   </Link>
                 </div>
                 <div className="contenedor-boton">
-                  <button className="secondary"onClick={handlePrev}>Prev</button>
+                  <button className="secondary" onClick={handlePrev}>
+                    Prev
+                  </button>
                 </div>
                 <div className="contenedor-boton">
                   <button type="submit">Create</button>

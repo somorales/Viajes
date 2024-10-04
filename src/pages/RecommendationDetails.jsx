@@ -12,7 +12,7 @@ export default function RecommendationDetails() {
   const [city, setCity] = useState(null);
 
   useEffect(() => {
-    <DotLoader color="#f05a7e" />
+    <DotLoader color="#f05a7e" />;
     axios
       .get(
         `${import.meta.env.VITE_SERVER_URL}/recommendations/${
@@ -70,7 +70,7 @@ export default function RecommendationDetails() {
                 <p className="description">{recommendation.description}</p>
               </div>
               <div className="right-container">
-                <p style={{fontFamily: "Curly Writing"}}>
+                <p style={{ fontFamily: "Curly Writing" }}>
                   <b>from:</b> {recommendation.usuario}
                 </p>
               </div>
@@ -104,10 +104,7 @@ export default function RecommendationDetails() {
       </div>
       <div className="buttons-container-main">
         <div className="buttons-container">
-          <button
-            className="secondary-button"
-            onClick={handleDelete}
-          >
+          <button className="secondary-button" onClick={handleDelete}>
             Delete
           </button>
 

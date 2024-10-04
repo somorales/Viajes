@@ -1,22 +1,18 @@
 import React from "react";
 import CityCard from "../components/CityCard";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
 import memoriesPic from "../images/memories.png";
-import { DotLoader } from "react-spinners";
 
 function HomePage(props) {
   const { cities } = props;
 
-  console.log(cities);
-
   return (
     <>
-    {/* <DotLoader color="#f05a7e" /> */}
-      <div id="home-header" style={{backgroundImage:`url(${memoriesPic})`}}>
-        <div  id="home-header-bg" >
-        <p style={{fontFamily:"ShineTypewriter"}}>Tell us your story, create new ones.</p>
+      <div id="home-header" style={{ backgroundImage: `url(${memoriesPic})` }}>
+        <div id="home-header-bg">
+          <p style={{ fontFamily: "ShineTypewriter" }}>
+            Tell us your story, create new ones.
+          </p>
         </div>
       </div>
       <div>

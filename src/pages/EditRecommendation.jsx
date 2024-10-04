@@ -150,7 +150,7 @@ export default function EditRecommendation() {
 
   return (
     <div className="container-form">
-      <div >
+      <div>
         <form onSubmit={handleSubmit} className="form">
           <h1> Edit TravelStories 😊</h1>
           {activeStep === 0 && (
@@ -195,7 +195,6 @@ export default function EditRecommendation() {
                 </div>
 
                 <label>
-                  
                   <div> Image </div>
 
                   <input
@@ -220,7 +219,9 @@ export default function EditRecommendation() {
           {activeStep === 1 && (
             <div>
               <div>
-                <div><b>Select the stamp</b></div>
+                <div>
+                  <b>Select the stamp</b>
+                </div>
                 {stamps.map((eachStamp, index) => {
                   return (
                     <img
@@ -285,9 +286,11 @@ export default function EditRecommendation() {
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
-                  <button className="secondary"  onClick={handlePrev}>Prev</button>
+                  <button className="secondary" onClick={handlePrev}>
+                    Prev
+                  </button>
                 </div>
-                <div >
+                <div>
                   <button onClick={handleNext}>Next</button>
                 </div>
               </div>
@@ -296,36 +299,52 @@ export default function EditRecommendation() {
 
           {activeStep === 2 && (
             <div className="postal-main-container">
-              <div className='postal-card-container-main'>
+              <div className="postal-card-container-main">
                 <div className="postal-card-container preview">
                   <img src={image} alt="foto" />
                   <h1> {title}</h1>
 
-                  <div className='postal-body-container'>
-                    <div className='postal-body right'>
-                      <div className='right-container'>
-                        <p className='description'>{description}</p>
+                  <div className="postal-body-container">
+                    <div className="postal-body right">
+                      <div className="right-container">
+                        <p className="description">{description}</p>
                       </div>
-                      <div className='right-container'>
-                        <p className='description' style={{fontFamily: "Curly Writing"}}><b>from:</b> {usuario}</p>
+                      <div className="right-container">
+                        <p
+                          className="description"
+                          style={{ fontFamily: "Curly Writing" }}
+                        >
+                          <b>from:</b> {usuario}
+                        </p>
                       </div>
                     </div>
-                    <div className='postal-body'>
-                      <div className='stamp-container'>
+                    <div className="postal-body">
+                      <div className="stamp-container">
                         <img src={stamp} />
                       </div>
-                      <div className='paragraph-container'>
-                        <p><b>Date: </b>{new Intl.DateTimeFormat("es-ES").format(Date.parse(date))}</p>
-                        <p><b>Category: </b>{category}</p>
-                        <p><b>Companion: </b>{companion}</p>
-                        <p>{city.city}, {city.country}</p>
-                        
+                      <div className="paragraph-container">
+                        <p>
+                          <b>Date: </b>
+                          {new Intl.DateTimeFormat("es-ES").format(
+                            Date.parse(date)
+                          )}
+                        </p>
+                        <p>
+                          <b>Category: </b>
+                          {category}
+                        </p>
+                        <p>
+                          <b>Companion: </b>
+                          {companion}
+                        </p>
+                        <p>
+                          {city.city}, {city.country}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
 
               <div className="contenedor-botones">
                 <div className="contenedor-boton">
@@ -336,7 +355,9 @@ export default function EditRecommendation() {
                   </Link>
                 </div>
                 <div className="contenedor-boton">
-                  <button className="secondary" onClick={handlePrev}>Prev</button>
+                  <button className="secondary" onClick={handlePrev}>
+                    Prev
+                  </button>
                 </div>
                 <div className="contenedor-boton">
                   <button type="submit">Edit</button>
